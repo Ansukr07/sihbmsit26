@@ -7,29 +7,21 @@ function Navbar() {
     <nav className="navbar">
       <div className="nav-left">
         <div className="logo-container">
-          <div className="logo-icon">
-             <div className="logo-block"></div>
-             <div className="logo-block empty"></div>
-             <div className="logo-block"></div>
-             <div className="logo-block"></div>
-          </div>
-          CANTOR8
+          <img src="/bmsit.png" alt="BMSIT Logo" className="logo-img bmsit-logo" />
+          <img src="/banner.png" alt="Logo" className="logo-img" />
         </div>
       </div>
 
       <div className="nav-middle">
-        <div className="nav-item active" data-text="Home">Home</div>
-        <div className="nav-item" data-text="Products">Products</div>
-        <div className="nav-item" data-text="Partners">Partners</div>
-        <div className="nav-item" data-text="News">News</div>
-        <div className="nav-item" data-text="Blog">Blog</div>
+        <div className="nav-item active" data-text="HOME">HOME</div>
+        <div className="nav-item" data-text="PROBLEM STATEMENTS">PROBLEM STATEMENTS</div>
+        <div className="nav-item" data-text="FAQS">FAQS</div>
+        <div className="nav-item" data-text="PPT">PPT</div>
       </div>
 
       <div className="nav-right">
-        <div className="nav-item" data-text="Career">Career</div>
-        <div className="nav-item" data-text="Company">Company</div>
-        <div className="get-in-touch-btn">
-          Get in Touch
+        <div className="register-btn">
+          REGISTER NOW
           <div className="arrow-icon-container">
             <ArrowUpRight size={16} strokeWidth={2.5} />
           </div>

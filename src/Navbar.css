@@ -8,6 +8,7 @@
   top: 0;
   left: 0;
   z-index: 100;
+  background-color: transparent; /* Remove the blue strip */
 }
 
 .nav-left {
@@ -18,33 +19,25 @@
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 600;
-  font-size: 20px;
-  letter-spacing: 0.5px;
+  gap: 16px; /* Gap between bmsit.png and banner.png */
 }
 
-.logo-icon {
-  display: grid;
-  grid-template-columns: repeat(2, 6px);
-  grid-template-rows: repeat(2, 6px);
-  gap: 2px;
+.logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
 }
 
-.logo-block {
-  background-color: white;
-  border-radius: 1px;
-}
-.logo-block.empty {
-  background-color: transparent;
-}
-.logo-block.half {
-  background-color: rgba(255, 255, 255, 0.5);
+.bmsit-logo {
+  height: 44px; /* Slightly larger to balance the dimensions of BMSIT crest */
 }
 
 .nav-middle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Force absolute centering regardless of left/right widths */
   display: flex;
-  background: var(--dark-blue-bg);
+  background: rgba(0, 0, 0, 0.05); /* Light gray pill background for beige theme */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 4px;
@@ -76,7 +69,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-white);
+  color: var(--black-text); /* Black text for light theme */
   transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
@@ -89,7 +82,7 @@
 }
 
 .nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .nav-item:hover::before {
@@ -101,50 +94,49 @@
 }
 
 .nav-item.active {
-  background-color: var(--white);
+  background-color: var(--black-text); /* Active item is black */
 }
 
 .nav-item.active::before,
 .nav-item.active::after {
-  color: var(--text-blue);
+  color: var(--beige-bg); /* Active item text is beige */
 }
 .nav-item.active:hover {
-  background-color: var(--white);
+  background-color: var(--black-text);
 }
 
 .nav-right {
   display: flex;
-  background: var(--dark-blue-bg);
+  background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 4px;
   border-radius: 6px;
   align-items: center;
-  gap: 2px;
+  margin-left: auto; /* Push to right just in case */
 }
 
-.get-in-touch-btn {
+.register-btn {
   display: flex;
   align-items: center;
-  background-color: var(--white);
-  color: var(--text-blue);
+  background-color: var(--black-text);
+  color: var(--beige-bg);
   padding: 6px 6px 6px 20px;
   border-radius: 4px;
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
-  margin-left: 4px;
   gap: 12px;
   transition: opacity 0.2s;
 }
 
-.get-in-touch-btn:hover {
+.register-btn:hover {
   opacity: 0.9;
 }
 
 .arrow-icon-container {
-  background-color: var(--text-blue);
-  color: var(--white);
+  background-color: var(--beige-bg);
+  color: var(--black-text);
   width: 26px;
   height: 26px;
   display: flex;
@@ -152,3 +144,12 @@
   align-items: center;
   border-radius: 2px;
 }
+
+.arrow-icon-container svg {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.register-btn:hover .arrow-icon-container svg {
+  transform: translate(3px, -3px);
+}
+
