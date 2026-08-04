@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Timeline.css';
 import { Globe, Megaphone } from 'lucide-react';
 
 function Timeline() {
+  const [isVisible, setIsVisible] = useState(false);
+  const timelineRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (timelineRef.current) {
+      observer.observe(timelineRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const nodes = [
     // ROW 1
     {
@@ -75,7 +96,7 @@ function Timeline() {
   ];
 
   return (
-    <div className="timeline-page">
+    <div className="timeline-page" ref={timelineRef}>
       <div className="timeline-header">
         <h1>SIH'26 TIMELINE</h1>
       </div>
@@ -90,7 +111,7 @@ function Timeline() {
             return (
               <div 
                 key={node.id}
-                className={`arrow-wrapper wrapper-chevron-${node.direction} wrapper-${node.type}`}
+                className={`arrow-wrapper wrapper-chevron-${node.direction} wrapper-${node.type} animate-on-scroll ${isVisible ? 'is-visible' : ''}`}
                 style={{
                   gridRow: node.row,
                   gridColumn: node.col,
@@ -116,7 +137,7 @@ function Timeline() {
           })}
 
           {/* Right Curve (Spans Row 1 to 2) */}
-          <div className="curve-container right-curve-container" style={{ gridColumn: 5, gridRow: '1 / span 2', zIndex: 0, animationDelay: '0.6s' }}>
+          <div className={`curve-container right-curve-container animate-on-scroll ${isVisible ? 'is-visible' : ''}`} style={{ gridColumn: 5, gridRow: '1 / span 2', zIndex: 0, animationDelay: '0.6s' }}>
             <div className="curve right-curve"></div>
             <div className="curve-badge right-badge">
               <div className="icon-circle">
@@ -130,7 +151,7 @@ function Timeline() {
           </div>
 
           {/* Left Curve (Spans Row 2 to 3) */}
-          <div className="curve-container left-curve-container" style={{ gridColumn: 1, gridRow: '2 / span 2', zIndex: 0, animationDelay: '1.2s' }}>
+          <div className={`curve-container left-curve-container animate-on-scroll ${isVisible ? 'is-visible' : ''}`} style={{ gridColumn: 1, gridRow: '2 / span 2', zIndex: 0, animationDelay: '1.2s' }}>
             <div className="curve left-curve"></div>
             <div className="curve-badge left-badge">
               <div className="icon-circle">

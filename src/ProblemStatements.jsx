@@ -44,7 +44,7 @@ function ProblemStatements() {
   const [expandedId, setExpandedId] = useState(null);
   const [page, setPage] = useState(1);
 
-  // Load all 3 CSVs
+  // Load all CSVs
   useEffect(() => {
     const files = [
       { url: '/ps_2025.csv', year: 2025 },
@@ -52,24 +52,40 @@ function ProblemStatements() {
       { url: '/ps_2023.csv', year: 2023 },
     ];
 
-    Promise.all(
-      files.map(f =>
-        fetch(f.url)
-          .then(r => r.text())
-          .then(text => {
-            const result = Papa.parse(text, { header: true, skipEmptyLines: true });
-            return result.data.map((row, i) => {
-              const id = row.Statement_id || row.ID || `${f.year}-${i}`;
-              const category = row.Category || '';
-              const theme = normalizeTheme(row.Technology_Bucket || row['Technology Bucket'] || '');
-              const org = row.Organisation || row['Problem Creater\'s Organization'] || row.Organization || '';
-              const title = row.Title || '';
-              const desc = row.Description || '';
-              return { id, category, theme, org, title, desc, year: f.year };
-            }).filter(r => r.title && r.title !== 'Student Innovation');
-          })
-      )
-    ).then(results => {
+    const mainLoader = files.map(f =>
+      fetch(f.url)
+        .then(r => r.text())
+        .then(text => {
+          const result = Papa.parse(text, { header: true, skipEmptyLines: true });
+          return result.data.map((row, i) => {
+            const id = row.Statement_id || row.ID || `${f.year}-${i}`;
+            const category = row.Category || '';
+            const theme = normalizeTheme(row.Technology_Bucket || row['Technology Bucket'] || '');
+            const org = row.Organisation || row['Problem Creater\'s Organization'] || row.Organization || '';
+            const title = row.Title || '';
+            const desc = row.Description || '';
+            return { id, category, theme, org, title, desc, year: f.year };
+          }).filter(r => r.title && r.title !== 'Student Innovation');
+        })
+    );
+
+    // Sheet5: only has Category (theme) and Title
+    const sheet5Loader = fetch('/ps_sheet5.csv')
+      .then(r => r.text())
+      .then(text => {
+        const result = Papa.parse(text, { header: true, skipEmptyLines: true });
+        return result.data.map((row, i) => ({
+          id: `SIH26-S5-${String(i + 1).padStart(3, '0')}`,
+          category: '',
+          theme: normalizeTheme(row.Category || ''),
+          org: '',
+          title: row.Title || '',
+          desc: '',
+          year: 2026,
+        })).filter(r => r.title);
+      });
+
+    Promise.all([...mainLoader, sheet5Loader]).then(results => {
       const combined = results.flat();
       setAllProblems(combined);
       setLoading(false);

@@ -11,8 +11,7 @@ function Navbar() {
     { label: 'HOME', path: '/' },
     { label: 'PROBLEM STATEMENTS', path: '/problem-statements' },
     { label: 'TIMELINE', path: '/timeline' },
-    { label: 'FAQS', path: '/faqs' },
-    { label: 'PPT', path: '/ppt' }
+    { label: 'PPT FORMAT', isExternal: true, url: 'https://sih.gov.in/letters/2026/SIH2026-IDEA-Presentation-Format.pptx' }
   ];
 
   return (
@@ -28,9 +27,16 @@ function Navbar() {
         {navItems.map(item => (
           <div 
             key={item.label}
-            className={`nav-item ${location.pathname === item.path ? 'active' : ''}`} 
+            className={`nav-item ${!item.isExternal && location.pathname === item.path ? 'active' : ''}`} 
             data-text={item.label}
-            onClick={() => navigate(item.path)}
+            onClick={() => {
+              if (item.isExternal) {
+                window.open(item.url, '_blank');
+                navigate('/');
+              } else {
+                navigate(item.path);
+              }
+            }}
           >
             {item.label}
           </div>
