@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import PixelDivider from './PixelDivider';
 import Themes from './Themes';
+import Timeline from './Timeline';
 
 function Home() {
   return (
@@ -20,7 +21,7 @@ function Home() {
         </div>
       </main>
       
-      {/* Animated Pixel Art Divider */}
+      {/* Animated Pixel Art Divider (White to Blue) */}
       <PixelDivider />
 
       {/* About SIH Section */}
@@ -43,6 +44,12 @@ function Home() {
 
       {/* Wired Themes Page */}
       <Themes />
+
+      {/* Black to White Divider */}
+      <PixelDivider topColor="#151515" bottomColor="#ffffff" accentColor="#5CE1E6" />
+
+      {/* Wired Timeline Page */}
+      <Timeline />
     </>
   );
 }
