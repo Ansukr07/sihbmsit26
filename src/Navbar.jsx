@@ -75,7 +75,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className={`navbar ${!isVisible ? 'navbar-hidden' : ''} ${isDark ? 'navbar-dark' : ''}`}>
+      <nav className="navbar">
         <div className="nav-left">
           <div className="logo-container">
             <img src="/bmsit.png" alt="BMSIT Logo" className="logo-img bmsit-logo" />
@@ -84,7 +84,7 @@ function Navbar() {
         </div>
 
         {/* Desktop nav pills */}
-        <div className="nav-middle">
+        <div className={`nav-middle ${!isVisible ? 'hidden' : ''} ${isDark ? 'dark' : ''}`}>
           {navItems.map(item => (
             <div
               key={item.label}
@@ -109,7 +109,7 @@ function Navbar() {
 
         {/* Hamburger — mobile only */}
         <button
-          className="nav-hamburger"
+          className={`nav-hamburger ${!isVisible ? 'hidden' : ''} ${isDark ? 'dark' : ''}`}
           onClick={() => setMenuOpen(o => !o)}
           aria-label="Toggle menu"
         >

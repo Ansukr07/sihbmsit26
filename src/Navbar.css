@@ -4,16 +4,11 @@
   align-items: center;
   padding: 24px 48px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
   background-color: transparent;
-  transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1), background-color 0.3s ease;
-}
-
-.navbar-hidden {
-  transform: translateY(-110%);
 }
 
 .nav-left {
@@ -38,10 +33,10 @@
 }
 
 .nav-middle {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 36px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   display: flex;
   background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(12px);
@@ -51,6 +46,11 @@
   align-items: center;
   gap: 2px;
   z-index: 1000;
+  transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1), background-color 0.3s ease;
+}
+
+.nav-middle.hidden {
+  transform: translate(-50%, -150px);
 }
 
 .nav-item {
@@ -160,51 +160,39 @@
   transform: translate(3px, -3px);
 }
 
-/* Dark Theme Overrides */
-.navbar-dark .nav-item::before,
-.navbar-dark .nav-item::after {
-  color: var(--white);
-}
-
-.navbar-dark .nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.navbar-dark .nav-item.active {
-  background-color: var(--white);
-}
-
-.navbar-dark .nav-item.active::before,
-.navbar-dark .nav-item.active::after {
-  color: var(--black-text) !important;
-}
-
-.navbar-dark .nav-item.active:hover {
-  background-color: var(--white);
-}
-
-.navbar-dark .nav-middle,
-.navbar-dark .nav-right {
+/* Dark Theme Overrides (Applied directly to sticky elements) */
+.nav-middle.dark {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.navbar-dark .register-btn {
-  background-color: var(--white);
-  color: var(--black-text);
-}
-
-.navbar-dark .arrow-icon-container {
-  background-color: var(--black-text);
+.nav-middle.dark .nav-item::before,
+.nav-middle.dark .nav-item::after {
   color: var(--white);
 }
 
-.navbar-dark .logo-img {
-  filter: brightness(0) invert(1);
+.nav-middle.dark .nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-middle.dark .nav-item.active {
+  background-color: var(--white);
+}
+
+.nav-middle.dark .nav-item.active::before,
+.nav-middle.dark .nav-item.active::after {
+  color: var(--black-text) !important;
+}
+
+.nav-middle.dark .nav-item.active:hover {
+  background-color: var(--white);
 }
 
 /* ============ HAMBURGER BUTTON ============ */
 .nav-hamburger {
   display: none;
+  position: fixed;
+  top: 16px;
+  right: 20px;
   background: rgba(0, 0, 0, 0.08);
   border: none;
   border-radius: 6px;
@@ -214,12 +202,25 @@
   align-items: center;
   justify-content: center;
   z-index: 1200;
-  transition: background 0.2s;
+  transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1), background 0.2s, color 0.2s;
   flex-shrink: 0;
+}
+
+.nav-hamburger.hidden {
+  transform: translateY(-150px);
+}
+
+.nav-hamburger.dark {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .nav-hamburger:hover {
   background: rgba(0, 0, 0, 0.15);
+}
+
+.nav-hamburger.dark:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* ============ MOBILE DRAWER OVERLAY ============ */
