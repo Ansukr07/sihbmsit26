@@ -1,0 +1,261 @@
+.timeline-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  background-color: var(--beige-bg);
+  min-height: 100vh;
+  padding-top: 100px; /* Space for absolute navbar */
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+  padding: 0 40px;
+}
+
+.timeline-header h1 {
+  font-size: 42px;
+  color: var(--primary-blue);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sih-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--black-text);
+  text-align: left;
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr 1fr 140px;
+  grid-template-rows: 80px 80px 80px;
+  row-gap: 120px;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 160px; /* Space for side texts */
+  box-sizing: border-box;
+}
+
+/* Animation */
+@keyframes classy-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Base Wrapper Styles */
+.arrow-wrapper {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  opacity: 0; /* Start hidden */
+  animation: classy-reveal 0.7s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+}
+
+/* Base Arrow Styles */
+.timeline-arrow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrow clip-paths */
+.chevron-right.normal {
+  clip-path: polygon(calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%, 0 0);
+}
+.chevron-right.flat-left {
+  clip-path: polygon(calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 0 0);
+}
+.chevron-right.flat-right {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 20px 50%, 0 0);
+}
+
+.chevron-left.normal {
+  clip-path: polygon(100% 0, calc(100% - 20px) 50%, 100% 100%, 20px 100%, 0 50%, 20px 0);
+}
+.chevron-left.flat-right {
+  clip-path: polygon(100% 0, 100% 100%, 20px 100%, 0 50%, 20px 0);
+}
+.chevron-left.flat-left {
+  clip-path: polygon(100% 0, calc(100% - 20px) 50%, 100% 100%, 0 100%, 0 0);
+}
+
+/* Overlap and Sizing logic applied to Wrapper */
+.wrapper-chevron-right.wrapper-normal,
+.wrapper-chevron-right.wrapper-flat-right {
+  margin-left: -20px;
+  width: calc(100% + 20px);
+}
+
+.wrapper-chevron-left.wrapper-normal,
+.wrapper-chevron-left.wrapper-flat-right {
+  margin-left: -20px;
+  width: calc(100% + 20px);
+}
+
+.arrow-content {
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  z-index: 10;
+}
+
+.arrow-desc {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding-top: 16px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Curve Styles */
+.curve-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Start hidden */
+  animation: classy-reveal 0.7s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+}
+
+.curve {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.right-curve {
+  border: 80px solid #2870E8;
+  border-left: none;
+  border-top-right-radius: 140px; /* (80+120+80)/2 = 140px */
+  border-bottom-right-radius: 140px;
+}
+
+.left-curve {
+  border: 80px solid #062E6F;
+  border-right: none;
+  border-top-left-radius: 140px;
+  border-bottom-left-radius: 140px;
+}
+
+/* Badges on Curves */
+.curve-badge {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.right-badge {
+  right: 40px;
+  transform: translate(50%, -50%);
+}
+
+.left-badge {
+  left: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #28a745; /* Teal-ish green like the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--beige-bg);
+}
+
+.curve-date {
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Text outside Curves */
+.curve-side-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: max-content;
+  max-width: 180px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.right-text {
+  left: 100%;
+  margin-left: 20px;
+}
+
+.left-text {
+  right: 100%;
+  margin-right: 20px;
+  text-align: right;
+}
+
+/* Mobile Fallback */
+@media (max-width: 1250px) {
+  .timeline-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 0 40px;
+  }
+  
+  .curve-container {
+    display: none;
+  }
+  
+  .arrow-wrapper {
+    width: 100% !important;
+    max-width: 400px;
+    margin: 0 !important;
+    height: auto;
+  }
+
+  .timeline-arrow {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
+    border-radius: 8px;
+    padding: 24px;
+    height: auto;
+  }
+  
+  .arrow-desc {
+    position: relative;
+    top: auto;
+    left: auto;
+    padding-top: 12px;
+    color: var(--black-text) !important;
+  }
+}

@@ -13,8 +13,7 @@
   align-items: center;
   padding: 24px 48px;
   width: 100%;
-  background-color: var(--primary-blue); /* Retain the blue background for navbar to keep it exactly as before */
-  color: var(--white);
+  background-color: transparent;
 }
 
 .nav-left {
@@ -73,11 +72,11 @@
 }
 
 .nav-item.active {
-  background-color: var(--white);
-  color: var(--text-blue);
+  background-color: var(--black-text);
+  color: var(--white);
 }
 .nav-item.active:hover {
-  background-color: var(--white);
+  background-color: var(--black-text);
 }
 
 .nav-right {
@@ -135,6 +134,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
+  margin-top: 7vh;
 }
 
 .hero-line {
