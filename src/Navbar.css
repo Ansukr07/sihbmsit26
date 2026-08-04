@@ -4,11 +4,16 @@
   align-items: center;
   padding: 24px 48px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
-  background-color: transparent; /* Remove the blue strip */
+  z-index: 1000;
+  background-color: transparent;
+  transition: transform 0.35s cubic-bezier(0.21, 1.02, 0.73, 1), background-color 0.3s ease;
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
 }
 
 .nav-left {
@@ -33,10 +38,10 @@
 }
 
 .nav-middle {
-  position: fixed;
-  top: 24px;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%); /* Force absolute centering regardless of left/right widths */
+  transform: translate(-50%, -50%);
   display: flex;
   background: rgba(0, 0, 0, 0.05); /* Light gray pill background for beige theme */
   backdrop-filter: blur(12px);

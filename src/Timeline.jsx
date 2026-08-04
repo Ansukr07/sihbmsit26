@@ -25,49 +25,49 @@ function Timeline() {
   }, []);
 
   const nodes = [
-    // ROW 1
+    // ROW 1 (Left to Right)
     {
       id: 1, row: 1, col: 2, zIndex: 3,
       direction: 'right', type: 'flat-left',
-      title: 'Jun-Aug 2026',
-      desc: 'Registration of SPOCs',
-      color: '#062E6F' // Darkest Blue
+      title: '5 AUG 2026',
+      desc: 'SIH 2026 Launch',
+      color: '#062E6F'
     },
     {
       id: 2, row: 1, col: 3, zIndex: 2,
       direction: 'right', type: 'normal',
-      title: 'Jun-Aug 2026',
-      desc: 'Internal Hackathon',
-      color: '#094CB8' // Primary Blue
+      title: '5 - 6 AUG 2026',
+      desc: 'Internal Team Registration',
+      color: '#094CB8'
     },
     {
       id: 3, row: 1, col: 4, zIndex: 1,
       direction: 'right', type: 'flat-right',
-      title: 'Jul-Aug 2026',
-      desc: 'SIH Problem Statement Launch',
-      color: '#2870E8' // Lighter Blue
+      title: '17 AUG 2026',
+      desc: 'Idea/Prototype Presentation',
+      color: '#2870E8'
     },
     
     // ROW 2 (Right to Left)
     {
       id: 4, row: 2, col: 4, zIndex: 3,
       direction: 'left', type: 'flat-right',
-      title: 'Aug-Sept 2026',
-      desc: 'Nomination of Top Teams & Submission of Ideas on Portal',
+      title: '21 - 22 AUG 2026',
+      desc: 'College Level Selection',
       color: '#2870E8'
     },
     {
       id: 5, row: 2, col: 3, zIndex: 2,
       direction: 'left', type: 'normal',
-      title: 'Sep-Oct 2026',
-      desc: 'Screening of Ideas',
+      title: '1ST WEEK OF SEP',
+      desc: 'SIH Portal Submission',
       color: '#094CB8'
     },
     {
       id: 6, row: 2, col: 2, zIndex: 1,
       direction: 'left', type: 'flat-left',
-      title: 'Oct 2026',
-      desc: 'Result Publication',
+      title: 'OCT-NOV 2026',
+      desc: 'AICTE shortlisting for Grand Finale',
       color: '#062E6F'
     },
 
@@ -75,23 +75,16 @@ function Timeline() {
     {
       id: 7, row: 3, col: 2, zIndex: 3,
       direction: 'right', type: 'flat-left',
-      title: 'Nov 2026',
-      desc: 'Mentoring & Training Sessions',
+      title: 'DEC 2026',
+      desc: 'SIH Grand Finals',
       color: '#062E6F'
     },
     {
       id: 8, row: 3, col: 3, zIndex: 2,
       direction: 'right', type: 'normal',
-      title: 'Nov 2026',
-      desc: 'Announcement of Shortlist Students for SIH Grand Finale',
+      title: 'DEC 2026',
+      desc: 'Winners Felicitation and Recognition',
       color: '#094CB8'
-    },
-    {
-      id: 9, row: 3, col: 4, zIndex: 1,
-      direction: 'right', type: 'normal',
-      title: 'Dec 2026',
-      desc: 'SIH Grand Finale',
-      color: '#2870E8'
     }
   ];
 
@@ -139,29 +132,11 @@ function Timeline() {
           {/* Right Curve (Spans Row 1 to 2) */}
           <div className={`curve-container right-curve-container animate-on-scroll ${isVisible ? 'is-visible' : ''}`} style={{ gridColumn: 5, gridRow: '1 / span 2', zIndex: 0, animationDelay: '0.6s' }}>
             <div className="curve right-curve"></div>
-            <div className="curve-badge right-badge">
-              <div className="icon-circle">
-                <Globe size={24} color="#fff" />
-              </div>
-              <div className="curve-date" style={{ color: '#fff' }}>Jul-Aug<br/>2026</div>
-            </div>
-            <div className="curve-side-text right-text" style={{ color: '#2870E8' }}>
-              Internal Hackathon Report Compilation & Uploading on Portal
-            </div>
           </div>
 
           {/* Left Curve (Spans Row 2 to 3) */}
           <div className={`curve-container left-curve-container animate-on-scroll ${isVisible ? 'is-visible' : ''}`} style={{ gridColumn: 1, gridRow: '2 / span 2', zIndex: 0, animationDelay: '1.2s' }}>
             <div className="curve left-curve"></div>
-            <div className="curve-badge left-badge">
-              <div className="icon-circle">
-                <Megaphone size={24} color="#fff" />
-              </div>
-              <div className="curve-date" style={{ color: '#fff' }}>Nov<br/>2026</div>
-            </div>
-            <div className="curve-side-text left-text" style={{ color: '#062E6F' }}>
-              Communication of Result to Finalist Teams
-            </div>
           </div>
 
         </div>

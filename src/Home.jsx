@@ -26,7 +26,7 @@ function Home() {
       <PixelDivider />
 
       {/* About SIH Section */}
-      <section className="about-sih">
+      <section className="about-sih dark-section">
         <div className="about-container">
           <h2 className="about-title">About SIH 2026</h2>
           <div className="about-content">
@@ -44,7 +44,7 @@ function Home() {
       <PixelDivider topColor="#094CB8" bottomColor="#151515" accentColor="#5CE1E6" />
 
       {/* Themes Intro Section */}
-      <div style={{ 
+      <div className="dark-section" style={{ 
         backgroundColor: '#151515', 
         display: 'flex', 
         justifyContent: 'space-between', 

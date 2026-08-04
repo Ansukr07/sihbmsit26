@@ -152,7 +152,7 @@ function Themes() {
 
   return (
     // Increased height to 800vh to significantly slow down the scroll speed
-    <main className="themes-page" ref={containerRef} style={{ height: '800vh' }}>
+    <main className="themes-page dark-section" ref={containerRef} style={{ height: '800vh' }}>
       <div className="themes-sticky-wrapper">
         <div className="themes-track" ref={trackRef}>
           {themesList.map((theme, index) => (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
@@ -6,6 +6,57 @@ import './Navbar.css';
 function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [isVisible, setIsVisible] = useState(true);
+  const [isDark, setIsDark] = useState(false);
+  const lastScrollY = useRef(0);
+  const rafId = useRef(null);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      try {
+        const currentScrollY = window.scrollY;
+        
+        // 1. Visibility Logic
+        if (currentScrollY > 100) {
+          if (currentScrollY > lastScrollY) {
+            setIsVisible(false);
+          } else if (currentScrollY < lastScrollY) {
+            setIsVisible(true);
+          }
+        } else {
+          setIsVisible(true);
+        }
+        
+        lastScrollY = currentScrollY;
+
+        // 2. Theme Detection
+        const darkSections = document.querySelectorAll('.dark-section');
+        let currentlyOverDark = false;
+        
+        const navMidpoint = 45;
+        
+        darkSections.forEach(section => {
+          if (!section) return;
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= navMidpoint && rect.bottom >= navMidpoint) {
+            currentlyOverDark = true;
+          }
+        });
+
+        setIsDark(currentlyOverDark);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Check initially
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { label: 'HOME', path: '/' },
@@ -15,7 +66,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${!isVisible ? 'navbar-hidden' : ''} ${isDark ? 'navbar-dark' : ''}`}>
       <div className="nav-left">
         <div className="logo-container">
           <img src="/bmsit.png" alt="BMSIT Logo" className="logo-img bmsit-logo" />
