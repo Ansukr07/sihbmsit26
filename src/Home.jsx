@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import PixelDivider from './PixelDivider';
 import Themes from './Themes';
@@ -41,6 +42,43 @@ function Home() {
 
       {/* Blue to Black Divider */}
       <PixelDivider topColor="#094CB8" bottomColor="#151515" accentColor="#5CE1E6" />
+
+      {/* Themes Intro Section */}
+      <div style={{ 
+        backgroundColor: '#151515', 
+        display: 'flex', 
+        justifyContent: 'space-between', 
+        alignItems: 'center',
+        padding: '60px 48px 0 48px'
+      }}>
+        <h1 style={{ 
+          fontFamily: "'Aux Mono', monospace", 
+          fontSize: '82px', 
+          color: '#ffffff', 
+          textTransform: 'uppercase', 
+          letterSpacing: '2px',
+          fontWeight: 'normal',
+          margin: 0
+        }}>
+          THEMES
+        </h1>
+        <Link to="/problem-statements" style={{
+          color: '#151515',
+          backgroundColor: '#ffffff',
+          padding: '16px 24px',
+          borderRadius: '4px',
+          textDecoration: 'none',
+          fontWeight: '700',
+          fontSize: '16px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          transition: 'transform 0.2s'
+        }}>
+          View Problem Statements
+          <ArrowRight size={20} strokeWidth={2.5} />
+        </Link>
+      </div>
 
       {/* Wired Themes Page */}
       <Themes />

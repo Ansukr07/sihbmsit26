@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import arrowBlue from './assets/arrow-blue.svg';
 import './Themes.css';
 
@@ -84,6 +85,7 @@ const themesList = [
 ];
 
 function Themes() {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const trackRef = useRef(null);
   
@@ -155,7 +157,11 @@ function Themes() {
         <div className="themes-track" ref={trackRef}>
           {themesList.map((theme, index) => (
             <div key={index} className="theme-card-wrapper">
-              <div className="theme-card">
+              <div 
+                className="theme-card" 
+                onClick={() => navigate('/problem-statements')}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="card-top">
                   <div className="card-arrow">
                     <img src={arrowBlue} alt="Arrow" style={{ width: 20, height: 20 }} />
