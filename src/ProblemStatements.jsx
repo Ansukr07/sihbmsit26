@@ -77,7 +77,7 @@ function ProblemStatements() {
             const title = row.Title || '';
             const desc = row.Description || '';
             return { id, category, theme, org, title, desc, year: f.year };
-          }).filter(r => r.title && r.title !== 'Student Innovation');
+          }).filter(r => r.title);
         })
     );
 
@@ -87,7 +87,7 @@ function ProblemStatements() {
       .then(text => {
         const result = Papa.parse(text, { header: true, skipEmptyLines: true });
         return result.data.map((row, i) => ({
-          id: `SIH26-S5-${String(i + 1).padStart(3, '0')}`,
+          id: row.Statement_id || row.ID || `SIH26-S5-${String(i + 1).padStart(3, '0')}`,
           category: '',
           theme: normalizeTheme(row.Category || ''),
           org: '',

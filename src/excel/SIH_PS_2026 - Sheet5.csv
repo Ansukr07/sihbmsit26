@@ -1,54 +1,54 @@
-Category,Title
-"Agriculture, FoodTech & Rural Development",AI crop disease detection from leaf images
-"Agriculture, FoodTech & Rural Development",Precision irrigation control system
-"Agriculture, FoodTech & Rural Development",Supply chain tracking of farm produce
-"Agriculture, FoodTech & Rural Development",Soil nutrient sensor network
-"Agriculture, FoodTech & Rural Development",Farm equipment rental platform
-"Agriculture, FoodTech & Rural Development",Automated greenhouse controller
-MedTech / BioTech / HealthTech,Remote health monitoring wearable
-MedTech / BioTech / HealthTech,AI-based medical diagnosis assistant
-MedTech / BioTech / HealthTech,Ambulance dispatch optimization tool
-MedTech / BioTech / HealthTech,EHR integration across hospitals
-MedTech / BioTech / HealthTech,Smart medicine adherence system
-MedTech / BioTech / HealthTech,Telemedicine chatbot for rural clinics
-Smart Automation,Home energy optimization controller
-Smart Automation,Automated waste sorting robot
-Smart Automation,AI-powered building maintenance system
-Smart Automation,Gesture or voice controlled home devices
-Smart Automation,Smart inventory tracking for small warehouses
-Smart Automation,Predictive maintenance for machinery
-Smart Vehicles,Vehicle health monitoring dashboard
-Smart Vehicles,Smart vehicle platooning system
-Smart Vehicles,AI driver fatigue detection system
-Smart Vehicles,EV battery swap station scheduler
-Smart Vehicles,Augmented reality navigation assistant
-Smart Vehicles,Autonomous parking guidance system
-Transportation & Logistics,Last mile delivery route optimizer
-Transportation & Logistics,Real-time traffic congestion predictor
-Transportation & Logistics,Public transport dynamic schedule planner
-Transportation & Logistics,Load sharing for freight vehicles
-Transportation & Logistics,Cargo tracking via IoT
-Transportation & Logistics,Intelligent fleet management dashboard
-Clean & Green Technology,Smart recycling bins
-Clean & Green Technology,Solar microgrid management system
-Clean & Green Technology,Greywater recycling controller
-Clean & Green Technology,Air quality forecasting system
-Clean & Green Technology,Biogas generation optimization tool
-Clean & Green Technology,Sensor-based toilet cleanliness monitoring
-Robotics & Drones,Search and rescue robot in disaster zones
-Robotics & Drones,Agricultural drone for crop spraying
-Robotics & Drones,Autonomous cleaning robot for public spaces
-Robotics & Drones,Surveillance drone for emergency response
-Robotics & Drones,Warehouse drone for inventory stock checks
-Heritage & Culture,AR guided heritage tours
-Heritage & Culture,Digital archive of local crafts
-Heritage & Culture,Virtual museum platform
-Heritage & Culture,Language learning app for tribal dialects
-Heritage & Culture,Cultural event discovery & booking app
-Heritage & Culture,AI art restoration assistant
-Fitness & Sports,AI coach for personal workouts
-Fitness & Sports,Real-time sports performance tracker
-Fitness & Sports,Community fitness challenge app
-Fitness & Sports,Injury prediction tool for athletes
-Fitness & Sports,Virtual sports training assistant
-Fitness & Sports,Gamified health habit tracker
+Statement_id,Category,Title
+SIH260582,"Agriculture, FoodTech & Rural Development",AI crop disease detection from leaf images
+SIH260583,"Agriculture, FoodTech & Rural Development",Precision irrigation control system
+SIH260584,"Agriculture, FoodTech & Rural Development",Supply chain tracking of farm produce
+SIH260585,"Agriculture, FoodTech & Rural Development",Soil nutrient sensor network
+SIH260586,"Agriculture, FoodTech & Rural Development",Farm equipment rental platform
+SIH260587,"Agriculture, FoodTech & Rural Development",Automated greenhouse controller
+SIH260588,MedTech / BioTech / HealthTech,Remote health monitoring wearable
+SIH260589,MedTech / BioTech / HealthTech,AI-based medical diagnosis assistant
+SIH260590,MedTech / BioTech / HealthTech,Ambulance dispatch optimization tool
+SIH260591,MedTech / BioTech / HealthTech,EHR integration across hospitals
+SIH260592,MedTech / BioTech / HealthTech,Smart medicine adherence system
+SIH260593,MedTech / BioTech / HealthTech,Telemedicine chatbot for rural clinics
+SIH260594,Smart Automation,Home energy optimization controller
+SIH260595,Smart Automation,Automated waste sorting robot
+SIH260596,Smart Automation,AI-powered building maintenance system
+SIH260597,Smart Automation,Gesture or voice controlled home devices
+SIH260598,Smart Automation,Smart inventory tracking for small warehouses
+SIH260599,Smart Automation,Predictive maintenance for machinery
+SIH260600,Smart Vehicles,Vehicle health monitoring dashboard
+SIH260601,Smart Vehicles,Smart vehicle platooning system
+SIH260602,Smart Vehicles,AI driver fatigue detection system
+SIH260603,Smart Vehicles,EV battery swap station scheduler
+SIH260604,Smart Vehicles,Augmented reality navigation assistant
+SIH260605,Smart Vehicles,Autonomous parking guidance system
+SIH260606,Transportation & Logistics,Last mile delivery route optimizer
+SIH260607,Transportation & Logistics,Real-time traffic congestion predictor
+SIH260608,Transportation & Logistics,Public transport dynamic schedule planner
+SIH260609,Transportation & Logistics,Load sharing for freight vehicles
+SIH260610,Transportation & Logistics,Cargo tracking via IoT
+SIH260611,Transportation & Logistics,Intelligent fleet management dashboard
+SIH260612,Clean & Green Technology,Smart recycling bins
+SIH260613,Clean & Green Technology,Solar microgrid management system
+SIH260614,Clean & Green Technology,Greywater recycling controller
+SIH260615,Clean & Green Technology,Air quality forecasting system
+SIH260616,Clean & Green Technology,Biogas generation optimization tool
+SIH260617,Clean & Green Technology,Sensor-based toilet cleanliness monitoring
+SIH260618,Robotics & Drones,Search and rescue robot in disaster zones
+SIH260619,Robotics & Drones,Agricultural drone for crop spraying
+SIH260620,Robotics & Drones,Autonomous cleaning robot for public spaces
+SIH260621,Robotics & Drones,Surveillance drone for emergency response
+SIH260622,Robotics & Drones,Warehouse drone for inventory stock checks
+SIH260623,Heritage & Culture,AR guided heritage tours
+SIH260624,Heritage & Culture,Digital archive of local crafts
+SIH260625,Heritage & Culture,Virtual museum platform
+SIH260626,Heritage & Culture,Language learning app for tribal dialects
+SIH260627,Heritage & Culture,Cultural event discovery & booking app
+SIH260628,Heritage & Culture,AI art restoration assistant
+SIH260629,Fitness & Sports,AI coach for personal workouts
+SIH260630,Fitness & Sports,Real-time sports performance tracker
+SIH260631,Fitness & Sports,Community fitness challenge app
+SIH260632,Fitness & Sports,Injury prediction tool for athletes
+SIH260633,Fitness & Sports,Virtual sports training assistant
+SIH260634,Fitness & Sports,Gamified health habit tracker
