@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const ROWS = 8;
+const ROWS = 4; // Reduced to 4 vertical boxes
 const BLOCK_SIZE = 48; // Increased size of each square block in pixels
 
 function PixelDivider() {
@@ -43,10 +43,15 @@ function PixelDivider() {
       ctx.fillStyle = '#f2f0e6';
       ctx.fillRect(0, 0, width, height);
 
+      // Calculate a "fill" factor based on scroll position. 
+      // As the user scrolls down (e.g. past 100px), this number grows and forces more blocks to spawn.
+      // By the time they hit the About section (~400px+), it will force the divider to become solid blue.
+      const scrollFill = Math.max(0, (scrollY - 50) * 0.0003);
+
       for (let x = 0; x < cols; x++) {
         for (let y = 0; y < ROWS; y++) {
-          // The bottom two rows are mostly solid blue to ground the divider
-          if (y >= ROWS - 2) {
+          // The bottom row is always solid blue to ground the divider
+          if (y === ROWS - 1) {
             ctx.fillStyle = '#094CB8';
             ctx.fillRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE + 1, BLOCK_SIZE + 1); // +1 prevents subpixel gaps
             continue;
@@ -56,18 +61,26 @@ function PixelDivider() {
           const seed = seeds[seedX][y];
           
           // Combine Sine waves with scroll position to create organic shifting clusters
-          const waveX = Math.sin(x * 0.3 + scrollY * 0.004);
-          const waveY = Math.cos(y * 0.5 - scrollY * 0.003);
-          const noise = Math.sin(seed * 15 + scrollY * 0.015);
+          // Scroll multipliers have been heavily reduced to make the pattern morph much more slowly
+          const waveX = Math.sin(x * 0.3 + scrollY * 0.0004);
+          const waveY = Math.cos(y * 0.5 - scrollY * 0.0003);
+          const noise = Math.sin(seed * 15 + scrollY * 0.001);
           
-          const value = waveX + waveY + noise;
+          // Normalize the combined waves so the value is strictly between 0.0 and 1.0
+          const value = (waveX + waveY + noise + 3) / 6;
           
-          // Lower rows have a lower threshold (more likely to spawn a block)
-          const threshold = 2.0 - (y * 0.3);
+          // Base threshold depends on row (y). 
+          // Top row has threshold ~0.8, bottom has ~0.2.
+          // We subtract scrollFill so that scrolling down rapidly guarantees block generation.
+          const threshold = 0.8 - (y * 0.2) - scrollFill;
 
+          // Because value is always >= 0, once threshold drops below 0, 
+          // it is mathematically guaranteed that every single block will spawn.
           if (value > threshold) {
-            // 15% chance for a cyan block, otherwise standard blue
-            ctx.fillStyle = seed > 0.85 ? '#5CE1E6' : '#094CB8';
+            // The chance of a cyan block decreases as you scroll down.
+            // When scrollFill gets high enough, ALL blocks become standard blue.
+            const cyanThreshold = 0.85 + (scrollFill * 0.5);
+            ctx.fillStyle = seed > cyanThreshold ? '#5CE1E6' : '#094CB8';
             ctx.fillRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE + 1, BLOCK_SIZE + 1);
           }
         }
