@@ -218,7 +218,7 @@
 
 .ps-table-header {
   display: grid;
-  grid-template-columns: 100px 3fr 1.5fr 1.5fr 110px 40px;
+  grid-template-columns: 100px 3.5fr 1.5fr 1.5fr 110px;
   align-items: center;
   padding: 14px 20px;
   border-bottom: 2px solid #111;
@@ -235,7 +235,6 @@
 .col-org  { min-width: 0; }
 .col-theme{ min-width: 0; }
 .col-type { min-width: 0; }
-.col-icon { min-width: 0; display: flex; justify-content: flex-end; }
 
 .ps-table-body {
   display: flex;
@@ -249,10 +248,9 @@
 
 .ps-row-main {
   display: grid;
-  grid-template-columns: 100px 3fr 1.5fr 1.5fr 110px 40px;
+  grid-template-columns: 100px 3.5fr 1.5fr 1.5fr 110px;
   align-items: center;
   padding: 20px;
-  cursor: pointer;
   border-radius: 6px;
   transition: background 0.15s;
   gap: 16px;
@@ -262,12 +260,13 @@
   background: rgba(0,0,0,0.025);
 }
 
-.ps-row-main.has-desc {
+.clickable-title {
   cursor: pointer;
+  transition: color 0.15s;
 }
 
-.ps-row-main:not(.has-desc) {
-  cursor: default;
+.clickable-title:hover {
+  color: #094CB8;
 }
 
 .ps-no-desc {
@@ -293,9 +292,7 @@
 .col-org {
   font-size: 12.5px;
   color: #555;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  word-wrap: break-word;
 }
 
 .ps-theme-tag {
@@ -304,11 +301,8 @@
   color: #555;
   padding: 3px 8px;
   border-radius: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-  max-width: 100%;
+  display: inline-block;
+  word-wrap: break-word;
 }
 
 .ps-type-badge {
@@ -330,14 +324,7 @@
   color: #b45309;
 }
 
-.ps-expand-btn {
-  color: #aaa;
-  transition: color 0.15s;
-}
 
-.ps-row-main:hover .ps-expand-btn {
-  color: #111;
-}
 
 .ps-row-desc {
   grid-column: 1 / -1;
@@ -546,9 +533,7 @@
 }
 
 .col-icon {
-  width: 30px;
-  display: flex;
-  justify-content: flex-end;
+  display: none;
 }
 
 .ps-table-row {
@@ -683,9 +668,7 @@
     order: 5;
   }
 
-  .col-icon {
-    display: none; /* hide expand icon — tap anywhere on card expands */
-  }
+
 
   .ps-row-desc {
     font-size: 13px;

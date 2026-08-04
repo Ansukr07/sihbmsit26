@@ -118,7 +118,12 @@ function ProblemStatements() {
       if (selectedType !== 'All' && p.category !== selectedType) return false;
       if (search) {
         const q = search.toLowerCase();
-        if (!p.title.toLowerCase().includes(q) && !p.org.toLowerCase().includes(q) && !p.theme.toLowerCase().includes(q)) return false;
+        if (
+          !p.title.toLowerCase().includes(q) && 
+          !p.org.toLowerCase().includes(q) && 
+          !p.theme.toLowerCase().includes(q) &&
+          !p.id.toLowerCase().includes(q)
+        ) return false;
       }
       return true;
     });
@@ -141,7 +146,7 @@ function ProblemStatements() {
           <Search size={16} className="ps-search-icon" />
           <input
             className="ps-search"
-            placeholder="Search by title, organisation, or theme..."
+            placeholder="Search by ID, title, organisation, or theme..."
             value={search}
             onChange={handleSearch}
           />
@@ -201,31 +206,31 @@ function ProblemStatements() {
                 <div className="col-org">ORGANISATION</div>
                 <div className="col-theme">THEME</div>
                 <div className="col-type">TYPE</div>
-                <div className="col-icon"></div>
               </div>
               <div className="ps-table-body">
                 {paginated.length === 0 ? (
                   <div className="ps-empty">No problems found. Try adjusting your filters.</div>
                 ) : paginated.map((prob) => (
                   <div key={prob.id} className={`ps-table-row ${expandedId === prob.id ? 'expanded' : ''}`}>
-                    <div
-                      className={`ps-row-main ${prob.desc ? 'has-desc' : ''}`}
-                      onClick={() => prob.desc && setExpandedId(expandedId === prob.id ? null : prob.id)}
-                    >
+                    <div className={`ps-row-main ${prob.desc ? 'has-desc' : ''}`}>
                       <div className="col-id ps-id-badge">{prob.id}</div>
-                      <div className="col-itch ps-title-text">{prob.title}</div>
+                      <div 
+                        className={`col-itch ps-title-text ${prob.desc ? 'clickable-title' : ''}`}
+                        onClick={() => prob.desc && setExpandedId(expandedId === prob.id ? null : prob.id)}
+                      >
+                        {prob.title}
+                        {prob.desc && (
+                          <span style={{ display: 'inline-flex', verticalAlign: 'middle', marginLeft: '8px', color: '#888' }}>
+                            {expandedId === prob.id ? <Minus size={15} /> : <Plus size={15} />}
+                          </span>
+                        )}
+                      </div>
                       <div className="col-org">{prob.org}</div>
                       <div className="col-theme">
                         <span className="ps-theme-tag">{prob.theme}</span>
                       </div>
                       <div className="col-type">
                         <span className={`ps-type-badge ${prob.category?.toLowerCase()}`}>{prob.category}</span>
-                      </div>
-                      <div className="col-icon ps-expand-btn">
-                        {prob.desc
-                          ? (expandedId === prob.id ? <Minus size={15} /> : <Plus size={15} />)
-                          : <span className="ps-no-desc">—</span>
-                        }
                       </div>
                       {expandedId === prob.id && prob.desc && (
                         <div className="ps-row-desc" onClick={e => e.stopPropagation()}>
