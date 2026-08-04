@@ -9,7 +9,7 @@ function Navbar() {
 
   const navItems = [
     { label: 'HOME', path: '/' },
-    { label: 'THEMES', path: '/themes' },
+    { label: 'PROBLEM STATEMENTS', path: '/problem-statements' },
     { label: 'TIMELINE', path: '/timeline' },
     { label: 'FAQS', path: '/faqs' },
     { label: 'PPT', path: '/ppt' }

@@ -153,3 +153,47 @@
   transform: translate(3px, -3px);
 }
 
+/* Dark Theme Overrides */
+.navbar-dark .nav-item::before,
+.navbar-dark .nav-item::after {
+  color: var(--white);
+}
+
+.navbar-dark .nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-dark .nav-item.active {
+  background-color: var(--white);
+}
+
+.navbar-dark .nav-item.active::before,
+.navbar-dark .nav-item.active::after {
+  color: var(--black-text) !important;
+}
+
+.navbar-dark .nav-item.active:hover {
+  background-color: var(--white);
+}
+
+.navbar-dark .nav-middle,
+.navbar-dark .nav-right {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-dark .register-btn {
+  background-color: var(--white);
+  color: var(--black-text);
+}
+
+.navbar-dark .arrow-icon-container {
+  background-color: var(--black-text);
+  color: var(--white);
+}
+
+/* Optional: Invert logos if they are black SVG/PNGs. If they are colored, leave them. 
+   Assuming they are black for the light theme, we invert them for dark theme */
+.navbar-dark .logo-img {
+  filter: brightness(0) invert(1);
+}
+
