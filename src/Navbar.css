@@ -372,3 +372,17 @@
     height: 44px;
   }
 }
+
+@media (max-width: 480px) {
+  .logo-container {
+    gap: 8px;
+  }
+  
+  .logo-img {
+    height: 24px;
+  }
+
+  .bmsit-logo {
+    height: 28px;
+  }
+}
