@@ -90,3 +90,131 @@
   line-height: 1.6;
   opacity: 0.9;
 }
+
+/* ============ THEMES INTRO HEADER ============ */
+.themes-intro-header {
+  background-color: #151515;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 48px 0 48px;
+}
+
+.themes-intro-title {
+  font-family: 'Aux Mono', monospace;
+  font-size: 82px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.themes-intro-btn {
+  color: #151515;
+  background-color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s, opacity 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.themes-intro-btn:hover {
+  opacity: 0.85;
+}
+
+/* ============ MOBILE RESPONSIVE ============ */
+@media (max-width: 900px) {
+  /* Hero */
+  .hero-section {
+    padding: 24px 24px;
+    padding-top: 110px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .hero-text-block {
+    gap: 16px;
+    margin-top: 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-line {
+    font-size: 36px;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Remove staggered offsets on mobile — let them center naturally */
+  .hero-line.offset-1,
+  .hero-line.offset-2,
+  .hero-line.offset-3 {
+    margin-left: 0;
+  }
+
+  .pixel-arrow {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  /* About */
+  .about-sih {
+    padding: 48px 24px 64px;
+  }
+
+  .about-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+  }
+
+  /* Themes intro header on mobile */
+  .themes-intro-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 24px 0 24px;
+    gap: 20px;
+  }
+
+  .themes-intro-title {
+    font-size: 40px;
+    letter-spacing: 1px;
+  }
+
+  .themes-intro-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 20px 20px;
+    padding-top: 90px;
+  }
+
+  .hero-line {
+    font-size: 26px;
+    gap: 8px;
+  }
+
+  .themes-intro-title {
+    font-size: 30px;
+  }
+}
