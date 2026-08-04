@@ -1,0 +1,101 @@
+Statement_id,Category,Technology_Bucket,Organization,Title
+SIH25001,Software,MedTech / BioTech / HealthTech,Ministry of Development of North Eastern Region,Smart Community Health Monitoring and Early Warning System for Water-Borne Diseases in Rural Northeast India
+SIH25002,Software,Travel & Tourism,Ministry of Development of North Eastern Region,"Smart Tourist Safety Monitoring & Incident Response System using Al, Geo-Fencing, and Blockchain-based Digital ID"
+SIH25003,Hardware,Transportation & Logistics,Ministry of Development of North Eastern Region,Low-Cost smart transportation solution for Agri produce from remote farms to nearest motorable road in NER Region
+SIH25004,Software,"Agriculture, FoodTech & Rural Development","Ministry of Fisheries, Animal Husbandry & Dairying",lmage based breed recognition for cattle and buffaloes of India
+SIH25005,Software,"Agriculture, FoodTech & Rural Development","Ministry of Fisheries, Animal Husbandry & Dairying",lmage based Animal Type Classification for cattle and buffaloes
+SIH25006,Software,"Agriculture, FoodTech & Rural Development","Ministry of Fisheries, Animal Husbandry & Dairying",Development of a Digital Farm Management Portal for lmplementing Biosecurity ileasures in Pig and Poultry Farms
+SIH25007,Software,"Agriculture, FoodTech & Rural Development","Ministry of Fisheries, Animal Husbandry & Dairying",Development of a Digital Farm Management Portal for Monitoring aximum Residue Limits (MRL) and Antimicrobial Usage (AMU) in Livestock
+SIH25008,Software,Disaster Management,Government of Punjab,Disaster Preparedness and Response Education System for Schools and Colleges
+SIH25009,Software,Smart Education,Government of Punjab,Gamified Environmental Education Platform for Schools and Colleges
+SIH25010,Software,"Agriculture, FoodTech & Rural Development",Government of Punjab,Smart Crop Advisory System for Small and Marginal Farmers
+SIH25011,Software,Smart Education,Government of Punjab,Smart Curriculum Activity & Attendance App
+SIH25012,Software,Smart Education,Government of Punjab,Automated Attendance System for Rural Schools
+SIH25013,Software,Transportation & Logistics,Government of Punjab,Real-Time Public Transport Tracking for Small Cities
+SIH25014,Hardware,Clean & Green Technology,Government of Punjab,Waste Segregation Monitoring System for Urban Local Bodies
+SIH25015,Hardware,"Agriculture, FoodTech & Rural Development",Government of Punjab,Intelligent Pesticide Sprinkling System Determined by the Infection Level of a Plant
+SIH25016,Software,Smart Education,Government of Punjab,Automated Student Attendance Monitoring and Analytics System for Colleges
+SIH25017,Software,Smart Education,Government of Punjab,Digital Platform for Centralized Alumni Data Management and Engagement
+SIH25018,Software,MedTech / BioTech / HealthTech,Government of Punjab,Telemedicine Access for Rural Healthcare in Nabha
+SIH25019,Software,Smart Education,Government of Punjab,Digital Learning Platform for Rural School Students in Nabha
+SIH25020,Hardware,Smart Automation,Ministry of Railways,Development of indigenous contactless Integrated Track Monitoring Systems (ITMS) for Track Recording on Indian Railways
+SIH25021,Hardware,Transportation & Logistics,Ministry of Railways,AI based development of Laser based QR Code marking on 'track fittings on Indian Railways'.
+SIH25022,Software,Transportation & Logistics,Ministry of Railways,Maximizing Section Throughput Using Al- Powered Precise Train Traffic Control
+SIH25023,Software,MedTech / BioTech / HealthTech,Ministry of Ayush,AyurSutra- Panchakarma Patient Management and therapy scheduling Software
+SIH25024,Software,MedTech / BioTech / HealthTech,Ministry of Ayush,"Comprehensive Cloud-Based Practice Management & Nutrient Analysis Software for Ayurvedic Dietitians, Tailored for Ayurveda-Focused Diet Plans"
+SIH25025,Hardware,MedTech / BioTech / HealthTech,Ministry of Ayush,E tongue for Dravya identification
+SIH25026,Software,MedTech / BioTech / HealthTech,Ministry of Ayush,Develop API code to integrate NAMASTE and or the International Classification of Diseases (ICD-11) via the Traditional Medicine Module 2 (TM2) into existing EMR systems that comply with Electronic Health Record (EHR) Standards for India.
+SIH25027,Software,Blockchain & Cybersecurity,Ministry of Ayush,"Develop a blockchain-based system for botanical traceability of Ayurvedic herbs, including geo-tagging from the point of collection (farmers/wild collectors) to the final Ayurvedic formulation label."
+SIH25028,Software,Smart Education,Government of Jharkhand,Smart Classroom & Timetable Scheduler
+SIH25029,Software,Smart Education,Government of Jharkhand,Authenticity Validator for Academia
+SIH25030,Software,"Agriculture, FoodTech & Rural Development",Government of Jharkhand,Al-Based Crop Recommendation for Farmers
+SIH25031,Software,Clean & Green Technology,Government of Jharkhand,Crowdsourced Civic lssue Reporting and Resolution System
+SIH25032,Software,Travel & Tourism,Government of Jharkhand,Development of a Smart Digital Platform to Promote Eco & Cultural Tourism in Jharkhand
+SIH25033,Software,Smart Automation,Ministry of Corporate Affairs,Al-Based Smart Allocation Engine for PM Internship Scheme
+SIH25034,Software,Smart Education,Ministry of Corporate Affairs,Al-Based Internship Recommendation Engine for PM Internship Scheme
+SIH25035,Software,Miscellaneous,Ministry of Corporate Affairs,Sentiment analysis of comments received through E-consultation module
+SIH25036,Hardware,Miscellaneous,Ministry of Earth Sciences (MoES),Development of Sensor for Detection Of Microplastics
+SIH25037,Hardware,Miscellaneous,Ministry of Earth Sciences (MoES),Development of a low-cost camera-based automated beach sand grain size mapping system
+SIH25038,Software,Clean & Green Technology,Ministry of Earth Sciences (MoES),Blockchain-Based Blue Carbon Registry and MRV System
+SIH25039,Software,Disaster Management,Ministry of Earth Sciences (MoES),Integrated Platform for Crowdsourced Ocean Hazard Reporting and Social Media Analytics
+SIH25040,Software,Miscellaneous,Ministry of Earth Sciences (MoES),FloatChat - AI-Powered Conversational Interface for ARGO Ocean Data Discovery and Visualization
+SIH25041,Software,Renewable / Sustainable Energy,Ministry of Earth Sciences (MoES),"AI-Driven Unified Data Platform for Oceanographic, Fisheries, and Molecular Biodiversity Insights"
+SIH25042,Software,Miscellaneous,Ministry of Earth Sciences (MoES),Identifying Taxonomy and Assessing Biodiversity from eDNA Datasets
+SIH25043,Hardware,Smart Automation,Ministry of Earth Sciences (MoES),Embedded Intelligent Microscopy System for Identification and Counting of Microscopic Marine Organisms
+SIH25044,Software,"Agriculture, FoodTech & Rural Development",Government of Odisha,Al-Powered Crop Yield Prediction and Optimization
+SIH25045,Software,"Agriculture, FoodTech & Rural Development",Government of Odisha,Blockchain-Based Supply Chain Transparency for Agricultural Produce
+SIH25046,Hardware,Clean & Green Technology,Government of Odisha,Smart Waste Segregation and Recycling System
+SIH25047,Hardware,Robotics and Drones,Government of Odisha,Disaster Response Drone for Remote Areas
+SIH25048,Software,Smart Education,Government of Odisha,Gamified Learning Platform for Rural Education
+SIH25049,Software,MedTech / BioTech / HealthTech,Government of Odisha,Al-Driven Public Health Chatbot for Disease Awareness
+SIH25050,Software,Transportation & Logistics,Government of Odisha,Smart Traffic Management Systern for Urban Congestion
+SIH25051,Hardware,Renewable / Sustainable Energy,Government of Odisha,Renewable Energy Monitoring System for Microgrids
+SIH25052,Software,Heritage & Culture,Government of Odisha,AR-Based Cultural Heritage Preservation Platform
+SIH25053,Hardware,"Agriculture, FoodTech & Rural Development","Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",Improved Onion storage technology for enhancing shelf life of onions
+SIH25054,Hardware,Smart Automation,"Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",Automated High-Current Short-Circuit Test System for MCB to comply with IEC 60898- 1:2015
+SIH25055,Hardware,Miscellaneous,"Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",Automated Specimen Preparation System for testing of Cable samples as per IS 10810 and IS 7098.
+SIH25056,Hardware,Miscellaneous,"Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",To explore new/altermative assaying methods to the fire assay method for testing of gold jewellery and artefacts through non-destructive testing
+SIH25057,Hardware,Miscellaneous,"Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",Automated Compliance Checker for Legal Metrology Declarations on E-Commerce Platforms
+SIH25058,Hardware,Miscellaneous,"Ministry of Consumer Affairs, Food & Public Distribution (MoCA,F&PD)",Detection and Prevention of Tampering in Weighing and Measuring instruments
+SIH25059,Software,Miscellaneous,Ministry of Social Justice & Empowerment (MoSJE),Enhancing Student Awareness on difference between Aadhaar linked and Direct Beneficiary Transfer(DBT) enabled Aadhaar seeded bank account.
+SIH25060,Software,Clean & Green Technology,Ministry of Social Justice & Empowerment (MoSJE),Real life solutions for Waste Management.
+SIH25061,Software,Travel & Tourism,Government of Sikkim,Digitize and Showcase Monasteries of Sikkim for Tourism and Cultural Preservation
+SIH25062,Hardware,"Agriculture, FoodTech & Rural Development",Government of Sikkim,Implementation of Smart Agriculture for Efficient Cultivation in Hilly Regions
+SIH25063,Hardware,Disaster Management,Government of Kerala,Developing a cost effective solution for detecting the breakage of Low Voltage AC Distribution Over Head conductors
+SIH25064,Hardware,Renewable / Sustainable Energy,Government of Kerala,Improving the Renewable Energy hosting capacity in Distribution Feeders improving the Power quality of Distribution network during high RE injection
+SIH25065,Software,Smart Automation,Ministry of Jal Shakti,Designing and development of an application for on spot assessment of Roof Top Rain water harvesting and artificial recharge potential and size of the RTRWH and AR.
+SIH25066,Software,Smart Automation,Ministry of Jal Shakti,Development of an Al-driven ChatBOT for INGRES as a virtuall assistant
+SIH25067,Software,Miscellaneous,Ministry of Jal Shakti,Proposal for Design and development of application or Heavy Metal Pollution indices
+SIH25068,Software,Miscellaneous,Ministry of Jal Shakti,Real time Groundwater resource evaluation using DWLR data
+SIH25069,Software,Miscellaneous,Ministry of Mines,Al-Driven Life Cycle Assessment (LCA) Tool for Advancing Circulanty and Sustainability in Metallurgy and Mining
+SIH25070,Software,Miscellaneous,Ministry of Mines,Secure Data Wiping for Trustworthy IT Asset Recycling
+SIH25071,Software,Disaster Management,Ministry of Mines,Al-Based Rockfall Prediction and Alert System for Open-Pit Mines
+SIH25072,Hardware,Renewable / Sustainable Energy,Ministry of Mines,Design and Implementation of Solar- Powered Dewatering in Mining Operations.
+SIH25073,Software,Fitness & Sports,Ministry of Youth Affairs and Sports,Al-Powered Mobile Platform for Democratizing Sports Talent Assessment
+SIH25074,Software,"Agriculture, FoodTech & Rural Development",Government of Kerala,AI-Powered Personal Farming Assistant for Kerala Farmers
+SIH25075,Software,"Agriculture, FoodTech & Rural Development",Government of Kerala,Gamified Platform to Promote Sustainable Farming Practices
+SIH25076,Software,"Agriculture, FoodTech & Rural Development",Government of Kerala,AI-Based Farmer Query Support and Advisory System
+SIH25077,Hardware,Smart Automation,Government of Kerala,A hardware that can detect and prevent unauthorized use of electric fences
+SIH25079,Software,Disaster Management,Government of Kerala,Software other than a circuit breaker that can be used to detect and turn off LT lines when the line breaks
+SIH25080,Software,Smart Automation,Government of Kerala,Document Overload at Kochi Metro Rail Limited (KMRL)-An automated solution
+SIH25081,Software,Smart Automation,Government of Kerala,AI-Driven Train Induction Planning & Scheduling for Kochi Metro Rail Limited (KMRL)
+SIH25082,Software,Travel & Tourism,Government of Kerala,Development of a travel related software app that can be installed on mobile phones that could capture trip related information
+SIH25083,Software,MedTech / BioTech / HealthTech,Government of Kerala,Digital Health Record Management System for migrant workers in Kerala aligned with sustainable development goals.
+SIH25084,Hardware,Disaster Management,Government of Kerala,Earthquake stabilised dialysis system for patient safety during seismic events.
+SIH25085,Hardware,Miscellaneous,Government of Kerala,Solution for NON-REVENUE LOSS IN WATER SUPPLY Solution to improve AWARENESS IN WATER CONSERVATION TREATMENT OF WASTE WATER AND REUSE FOR DOMESTIC PURPOSES
+SIH25090,Hardware,Clean & Green Technology,Government of Kerala,GREY WATER MANAGEMENT AND REUSE WET LAND MANAGEMENT WATER CONSERVATION
+SIH25091,Software,Smart Automation,Government of Jammu and Kashmir,AI-Based Timetable Generation System aligned with NEP 2020 for Multidisciplinary Education Structures
+SIH25092,Software,MedTech / BioTech / HealthTech,Government of Jammu and Kashmir,Development of a Digital Mental Health and Psychological Support System for Students in Higher Education
+SIH25093,Software,Smart Education,Government of Jammu and Kashmir,Centralised Digital Platform for Comprehensive student activity record in HEIs
+SIH25094,Software,Smart Education,Government of Jammu and Kashmir,One-Stop Personalized Career & Education Advisor
+SIH25095,Hardware,Smart Education,Autodesk,"Research and redesign a sport equipment commonly found in sport industry and utilize Fusion software to reimagine its design. Students can use Fusion Features such as Generative Design, Topology Optimization, Additive Build etc. The redesigned component should showcase innovation, enhanced functionality, and improved efficiency, all while being optimized for 3D printing."
+SIH25096,Hardware,Smart Education,Autodesk,"• Students are supposed to use Fusion software to generate NC code with machine details & tool library for any industrial component. • Students should possess technical skills in areas such as CAD/CAM software, G-code programming, toolpath optimization, and machining fundamentals. Additionally, their project ideas should demonstrate a viable solution to a real-world problem, ensuring feasibility and practicality in implementation."
+SIH25097,Software,Smart Education,Autodesk,Research and develop a design on autonomous small precision focused machine for planting crops or weeding.
+SIH25098,Software,Smart Education,Autodesk,"Students are tasked with designing a 4- story commercial office building using Revit Architecture and Revit Structure , ensuring effective integration between architectural and structural models in a BIM environment.(The size of the plot can be assumed by the students, all the dimensions wherever necessary can be assumed by students in mm units.)"
+SIH25099,Software,"Agriculture, FoodTech & Rural Development",MathWorks India Pvt. Ltd.,"AI-powered monitoring of crop health, soil condition, and pest risks using multispectral/hyperspectral imaging and sensor data."
+SIH25100,Software,Transportation & Logistics,MathWorks India Pvt. Ltd.,Accelerating High-Fidelity Road Network Modeling for Indian Traffic Simulations.
+SIH25101,Software,Smart Education,Government of Rajasthan,Remote classroom for rural colleges
+SIH25102,Software,Smart Automation,Government of Rajasthan,AI-based drop-out prediction and counseling system
+SIH25103,Software,Smart Automation,Government of Rajasthan,ERP-based Integrated Student Management system
+SIH25104,Software,Smart Education,Government of Rajasthan,Language Agnostic Chatbot
+SIH12507,Software,Heritage & Culture,AICTE,"Develop computer programs (in any language, preferably Python) to identify the design principles behind the Kolam designs and recreate the kolams."
