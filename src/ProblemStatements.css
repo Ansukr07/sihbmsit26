@@ -109,8 +109,11 @@
 /* Layout */
 .ps-content {
   display: flex;
-  gap: 40px;
+  gap: 60px;
   flex: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* Sidebar */
@@ -415,144 +418,7 @@
   color: #666;
 }
 
-.ps-title {
-  font-size: 72px;
-  font-weight: 700;
-  text-align: center;
-  color: #111111;
-  margin-bottom: 60px;
-  letter-spacing: -2px;
-}
 
-.ps-content {
-  display: flex;
-  gap: 60px;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.ps-sidebar {
-  width: 250px;
-  flex-shrink: 0;
-}
-
-.ps-filter-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: #666666;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.ps-category-header {
-  font-size: 16px;
-  color: #111111;
-  margin-bottom: 16px;
-}
-
-.ps-categories {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.ps-checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  cursor: pointer;
-  color: #444444;
-}
-
-.ps-checkbox-label:hover {
-  color: #111111;
-}
-
-.ps-checkbox {
-  display: none; /* Hide default */
-}
-
-.ps-checkbox-custom {
-  width: 14px;
-  height: 14px;
-  border: 1px solid #999;
-  border-radius: 2px;
-  display: inline-block;
-  position: relative;
-  transition: all 0.2s;
-}
-
-.ps-checkbox:checked + .ps-checkbox-custom {
-  background-color: #111111;
-  border-color: #111111;
-}
-
-.ps-checkbox:checked + .ps-checkbox-custom::after {
-  content: '';
-  position: absolute;
-  left: 4px;
-  top: 1px;
-  width: 3px;
-  height: 8px;
-  border: solid #ffffff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
-
-.ps-main {
-  flex-grow: 1;
-}
-
-.ps-table-header {
-  display: flex;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #dddddd;
-  font-size: 12px;
-  color: #666666;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.col-itch {
-  flex: 3;
-  padding-right: 20px;
-}
-
-.col-score {
-  flex: 1;
-}
-
-.col-industry {
-  flex: 1;
-}
-
-.col-icon {
-  display: none;
-}
-
-.ps-table-row {
-  display: flex;
-  padding: 24px 0;
-  border-bottom: 1px solid #eeeeee;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #222222;
-  align-items: center;
-}
-
-.ps-table-row:hover {
-  background-color: rgba(0, 0, 0, 0.02);
-}
-
-.ps-table-row .col-score {
-  font-family: inherit; /* Numbers matching the font */
-}
 
 /* ============ MOBILE RESPONSIVE ============ */
 @media (max-width: 768px) {
@@ -633,39 +499,64 @@
   }
 
   /* Table rows become cards */
+  .ps-table-row {
+    border-bottom: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
   .ps-row-main {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px;
-    gap: 8px;
-    border-radius: 8px;
+    padding: 24px;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .ps-row-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+  }
+
+  .col-type {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    order: unset;
   }
 
   .col-id {
     order: 1;
+    margin-bottom: 2px;
   }
 
   .col-itch {
     order: 2;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
     white-space: normal;
-  }
-
-  .col-org {
-    order: 3;
-    white-space: normal;
-    font-size: 12px;
-    color: #777;
+    padding-right: 20px;
   }
 
   .col-theme {
-    order: 4;
+    order: 3;
+    margin-top: 4px;
   }
 
-  .col-type {
-    order: 5;
+  .col-org {
+    order: 4;
+    white-space: normal;
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
   }
 
 
