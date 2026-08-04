@@ -160,6 +160,16 @@
 }
 
 /* Responsive adjustments */
+.footer-mobile-title {
+  display: none;
+  font-family: 'Aux Mono', monospace;
+  font-size: 32px;
+  font-weight: normal;
+  color: var(--white);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
 @media (max-width: 900px) {
   .footer-content {
     flex-direction: column;
@@ -171,7 +181,11 @@
     gap: 40px;
   }
 
-  .footer-logo.bmsit-logo {
+  .footer-logo {
     display: none;
+  }
+
+  .footer-mobile-title {
+    display: block;
   }
 }

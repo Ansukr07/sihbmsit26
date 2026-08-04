@@ -11,6 +11,7 @@ function Footer() {
           <div className="footer-logos">
             <img src="/bmsit.png" alt="BMSIT Logo" className="footer-logo bmsit-logo" />
             <img src="/banner.png" alt="SIH Banner" className="footer-logo" />
+            <h2 className="footer-mobile-title">SIH 2026</h2>
           </div>
           <p className="footer-description">
             Empowering students to solve the most pressing challenges of our time through innovation, collaboration, and technology.
