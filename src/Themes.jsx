@@ -99,6 +99,18 @@ function Themes() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 900);
   const [mobileIndex, setMobileIndex] = useState(0);
 
+  const getThemeFilterName = (title) => {
+    const mapping = {
+      "Medtech/Biotech/Healthtech": "MedTech / BioTech / HealthTech",
+      "Agriculture, Foodtech & Rural Development": "Agriculture, FoodTech & Rural Development",
+      "Tourism": "Travel & Tourism",
+      "Renewable/Sustainable Energy": "Renewable / Sustainable Energy",
+      "Games & Toys": "Toys & Games",
+      "Fintech": "Miscellaneous" 
+    };
+    return mapping[title] || title;
+  };
+
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth > 900);
     window.addEventListener('resize', handleResize);
@@ -174,7 +186,7 @@ function Themes() {
     <div key={index} className="theme-card-wrapper">
       <div 
         className="theme-card" 
-        onClick={() => navigate('/problem-statements')}
+        onClick={() => navigate('/problem-statements', { state: { filterTheme: getThemeFilterName(theme.title) } })}
         style={{ cursor: 'pointer' }}
       >
         <div className="card-top">

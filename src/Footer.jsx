@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin } from 'lucide-react';
+import { MapPin, Mail } from 'lucide-react';
 import './Footer.css';
 
 function Footer() {
@@ -38,6 +38,10 @@ function Footer() {
                   BMS Institute of Technology and Management<br />
                   Yelahanka, Bengaluru, Karnataka 560064
                 </span>
+              </li>
+              <li>
+                <Mail size={16} className="pin-icon" />
+                <a href="mailto:ecell@bmsit.in">ecell@bmsit.in</a>
               </li>
               <li className="footer-person">
                 <strong>SIH SPOC:</strong> Prof. S. Mahalakshmi (+91 9060393410)

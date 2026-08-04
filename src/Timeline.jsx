@@ -36,7 +36,7 @@ function Timeline() {
     {
       id: 2, row: 1, col: 3, zIndex: 2,
       direction: 'right', type: 'normal',
-      title: '5 - 6 AUG 2026',
+      title: '5 - 10 AUG 2026',
       desc: 'Internal Team Registration',
       color: '#094CB8'
     },

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import Papa from 'papaparse';
 import './ProblemStatements.css';
 import { SlidersHorizontal, Plus, Minus, Search, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from 'lucide-react';
@@ -38,7 +39,10 @@ const PAGE_SIZE = 15;
 function ProblemStatements() {
   const [allProblems, setAllProblems] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedThemes, setSelectedThemes] = useState([]);
+  const location = useLocation();
+  const [selectedThemes, setSelectedThemes] = useState(
+    location.state?.filterTheme ? [location.state.filterTheme] : []
+  );
   const [selectedType, setSelectedType] = useState('All'); // All | Software | Hardware
   const [search, setSearch] = useState('');
   const [expandedId, setExpandedId] = useState(null);
@@ -95,6 +99,20 @@ function ProblemStatements() {
 
     Promise.all([...mainLoader, sheet5Loader]).then(results => {
       const combined = results.flat();
+      
+      // Add Open Innovation if not present
+      if (!combined.some(p => p.id === 'SIH260001' || p.title.toLowerCase() === 'open innovation')) {
+        combined.unshift({
+          id: 'SIH260001',
+          category: 'Software/Hardware',
+          theme: 'Miscellaneous',
+          org: 'Smart India Hackathon',
+          title: 'Open Innovation',
+          desc: 'Participants are free to build innovative solutions for any problem statement of their choice. You can pitch your own unique ideas and build a working prototype.',
+          year: 2026
+        });
+      }
+
       setAllProblems(combined);
       setLoading(false);
     });
