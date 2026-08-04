@@ -1,5 +1,5 @@
 .themes-page {
-  background-color: #ffffff; /* White background */
+  background-color: #151515; /* Dark grey background */
   /* Height is controlled by inline style in React (e.g. 350vh) to allow native scrolling */
 }
 
@@ -48,7 +48,8 @@
 
 .theme-card {
   width: 340px;
-  height: 400px; /* Slightly taller to accommodate text */
+  min-height: 400px; /* Use min-height so it can expand if text is too long */
+  height: max-content;
   background-color: #044AB3; /* Custom blue from user */
   border-radius: 4px; /* Less curvy */
   display: flex;
@@ -90,28 +91,29 @@
 }
 
 .card-illustration {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 280px; /* Takes up the top portion of the card */
+  z-index: 0;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
   /* Fades out the bottom of the illustration so it gracefully blends and never obscures text */
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
 .theme-image {
   width: 100%;
   height: 100%;
-  max-height: 220px;
-  object-fit: contain;
-  transform: scale(1.3); /* Artificially zoom in */
+  object-fit: cover; /* Stretches to completely cover the absolute container */
+  transform: scale(1.05); /* Slight zoom so hover has room to scale */
   transition: transform 0.3s ease;
 }
 
 .theme-card:hover .theme-image {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .card-bottom {

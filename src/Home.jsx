@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import PixelDivider from './PixelDivider';
+import Themes from './Themes';
 
 function Home() {
   return (
@@ -36,6 +37,12 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* Blue to Black Divider */}
+      <PixelDivider topColor="#094CB8" bottomColor="#151515" accentColor="#5CE1E6" />
+
+      {/* Wired Themes Page */}
+      <Themes />
     </>
   );
 }

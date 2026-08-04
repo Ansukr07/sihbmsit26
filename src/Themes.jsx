@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import arrowBlue from './assets/arrow-blue.svg';
 import './Themes.css';
 
 import img1 from './assets/69e8e7c60a6abb7aa2a22804_1.avif';
@@ -158,7 +158,7 @@ function Themes() {
               <div className="theme-card">
                 <div className="card-top">
                   <div className="card-arrow">
-                    <ArrowUpRight size={20} strokeWidth={2.5} color="#094CB8" />
+                    <img src={arrowBlue} alt="Arrow" style={{ width: 20, height: 20 }} />
                   </div>
                 </div>
                 
