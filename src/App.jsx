@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer from './Footer';
 import Home from './Home';
 import Themes from './Themes';
 import Timeline from './Timeline';
@@ -18,6 +19,7 @@ function App() {
           <Route path="/timeline" element={<Timeline />} />
           <Route path="/problem-statements" element={<ProblemStatements />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
