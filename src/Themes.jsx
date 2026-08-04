@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import arrowBlue from './assets/arrow-blue.svg';
 import './Themes.css';
 
@@ -88,13 +89,15 @@ function Themes() {
   const navigate = useNavigate();
   const containerRef = useRef(null);
   const trackRef = useRef(null);
+  const mobileTrackRef = useRef(null);
   
   // Refs for smooth inertia scrolling
   const targetScroll = useRef(0);
   const currentScroll = useRef(0);
   const rafId = useRef(null);
 
-  const [isDesktop, setIsDesktop] = React.useState(window.innerWidth > 900);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 900);
+  const [mobileIndex, setMobileIndex] = useState(0);
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth > 900);
@@ -155,43 +158,84 @@ function Themes() {
     };
   }, []);
 
-  return (
-    // Increased height to 800vh to significantly slow down the scroll speed on desktop
-    <main className="themes-page dark-section" ref={containerRef} style={{ height: isDesktop ? '800vh' : 'auto' }}>
-      <div className="themes-sticky-wrapper">
-        <div className="themes-track" ref={trackRef}>
-          {themesList.map((theme, index) => (
-            <div key={index} className="theme-card-wrapper">
-              <div 
-                className="theme-card" 
-                onClick={() => navigate('/problem-statements')}
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="card-top">
-                  <div className="card-arrow">
-                    <img src={arrowBlue} alt="Arrow" style={{ width: 20, height: 20 }} />
-                  </div>
-                </div>
-                
-                <div className="card-illustration">
-                   <img 
-                     src={themeImages[index % themeImages.length]} 
-                     alt={`${theme.title} illustration`} 
-                     className="theme-image" 
-                   />
-                </div>
+  const scrollMobile = (dir) => {
+    const next = mobileIndex + dir;
+    if (next < 0 || next >= themesList.length) return;
+    setMobileIndex(next);
+    if (mobileTrackRef.current) {
+      const card = mobileTrackRef.current.children[next];
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      }
+    }
+  };
 
-                <div className="card-bottom">
-                  <h3 className="card-title">{theme.title}</h3>
-                  <p className="card-desc">
-                    {theme.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
+  const renderCard = (theme, index) => (
+    <div key={index} className="theme-card-wrapper">
+      <div 
+        className="theme-card" 
+        onClick={() => navigate('/problem-statements')}
+        style={{ cursor: 'pointer' }}
+      >
+        <div className="card-top">
+          <div className="card-arrow">
+            <img src={arrowBlue} alt="Arrow" style={{ width: 20, height: 20 }} />
+          </div>
+        </div>
+        
+        <div className="card-illustration">
+           <img 
+             src={themeImages[index % themeImages.length]} 
+             alt={`${theme.title} illustration`} 
+             className="theme-image" 
+           />
+        </div>
+
+        <div className="card-bottom">
+          <h3 className="card-title">{theme.title}</h3>
+          <p className="card-desc">
+            {theme.description}
+          </p>
         </div>
       </div>
+    </div>
+  );
+
+  return (
+    <main className="themes-page dark-section" ref={containerRef} style={{ height: isDesktop ? '800vh' : 'auto' }}>
+      {/* Desktop: sticky horizontal scroll */}
+      {isDesktop && (
+        <div className="themes-sticky-wrapper">
+          <div className="themes-track" ref={trackRef}>
+            {themesList.map((theme, index) => renderCard(theme, index))}
+          </div>
+        </div>
+      )}
+
+      {/* Mobile: horizontal carousel with arrows */}
+      {!isDesktop && (
+        <div className="themes-mobile-carousel">
+          <div className="themes-mobile-track" ref={mobileTrackRef}>
+            {themesList.map((theme, index) => renderCard(theme, index))}
+          </div>
+          <div className="themes-mobile-nav">
+            <button 
+              className="themes-mobile-arrow" 
+              onClick={() => scrollMobile(-1)}
+              disabled={mobileIndex === 0}
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button 
+              className="themes-mobile-arrow" 
+              onClick={() => scrollMobile(1)}
+              disabled={mobileIndex >= themesList.length - 1}
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

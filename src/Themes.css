@@ -136,57 +136,70 @@
   line-height: 1.5;
 }
 
-/* ============ MOBILE RESPONSIVE ============ */
-@media (max-width: 900px) {
-  /* On mobile, turn off the sticky horizontal scroll effect entirely */
-  .themes-page {
-    height: auto !important;
-  }
-
-  .themes-sticky-wrapper {
-    position: relative;
-    height: auto;
-    padding: 40px 0 60px;
-    overflow: visible;
-    align-items: flex-start;
-  }
-
-  .themes-track {
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0 20px;
-    width: 100%;
-    transform: none !important;
-    justify-content: center;
-  }
-
-  /* Reset all staggered margins */
-  .theme-card-wrapper:nth-child(4n+1),
-  .theme-card-wrapper:nth-child(even),
-  .theme-card-wrapper:nth-child(4n+3) {
-    margin-top: 0;
-  }
-
-  .theme-card-wrapper {
-    transform: scale(1) !important;
-    --scroll-scale: 1 !important;
-    width: calc(50% - 10px);
-    max-width: 200px;
-  }
-
-  .theme-card {
-    width: 100%;
-    min-height: 280px;
-  }
+/* ============ MOBILE CAROUSEL ============ */
+.themes-mobile-carousel {
+  padding: 40px 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-@media (max-width: 480px) {
-  .theme-card-wrapper {
-    width: 100%;
-    max-width: 320px;
-  }
+.themes-mobile-track {
+  display: flex;
+  gap: 16px;
+  padding: 0 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
 
-  .theme-card {
-    width: 100%;
-  }
+.themes-mobile-track::-webkit-scrollbar {
+  display: none;
+}
+
+.themes-mobile-track .theme-card-wrapper {
+  flex-shrink: 0;
+  width: 80%;
+  max-width: 340px;
+  scroll-snap-align: start;
+  transform: scale(1) !important;
+  --scroll-scale: 1 !important;
+  margin-top: 0 !important;
+}
+
+.themes-mobile-track .theme-card {
+  width: 100%;
+  min-height: 420px;
+}
+
+.themes-mobile-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.themes-mobile-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(40, 112, 232, 0.4);
+  background: rgba(10, 15, 30, 0.9);
+  color: #2870E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.themes-mobile-arrow:hover:not(:disabled) {
+  background: rgba(40, 112, 232, 0.15);
+  border-color: #2870E8;
+}
+
+.themes-mobile-arrow:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
 }
