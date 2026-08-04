@@ -1,8 +1,20 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const navItems = [
+    { label: 'HOME', path: '/' },
+    { label: 'THEMES', path: '/themes' },
+    { label: 'TIMELINE', path: '/timeline' },
+    { label: 'FAQS', path: '/faqs' },
+    { label: 'PPT', path: '/ppt' }
+  ];
+
   return (
     <nav className="navbar">
       <div className="nav-left">
@@ -13,10 +25,16 @@ function Navbar() {
       </div>
 
       <div className="nav-middle">
-        <div className="nav-item active" data-text="HOME">HOME</div>
-        <div className="nav-item" data-text="PROBLEM STATEMENTS">PROBLEM STATEMENTS</div>
-        <div className="nav-item" data-text="FAQS">FAQS</div>
-        <div className="nav-item" data-text="PPT">PPT</div>
+        {navItems.map(item => (
+          <div 
+            key={item.label}
+            className={`nav-item ${location.pathname === item.path ? 'active' : ''}`} 
+            data-text={item.label}
+            onClick={() => navigate(item.path)}
+          >
+            {item.label}
+          </div>
+        ))}
       </div>
 
       <div className="nav-right">

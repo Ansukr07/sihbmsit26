@@ -99,7 +99,7 @@
 
 .nav-item.active::before,
 .nav-item.active::after {
-  color: var(--beige-bg); /* Active item text is beige */
+  color: var(--white); /* Active item text is white */
 }
 .nav-item.active:hover {
   background-color: var(--black-text);
