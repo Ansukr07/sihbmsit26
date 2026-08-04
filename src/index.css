@@ -30,12 +30,15 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: clip;
+}
+
 body {
   font-family: 'Satoshi', sans-serif;
   background-color: var(--beige-bg);
   color: var(--black-text);
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 #root {

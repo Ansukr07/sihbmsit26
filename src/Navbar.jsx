@@ -99,12 +99,14 @@ function Navbar() {
 
         {/* Desktop register button */}
         <div className="nav-right">
-          <div className="register-btn">
-            REGISTER NOW
-            <div className="arrow-icon-container">
-              <ArrowUpRight size={16} strokeWidth={2.5} />
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEHOL10ezcq18ope3fUbBe3tWrWX947nSbOzlA4_pQBHznlw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <div className="register-btn">
+              REGISTER NOW
+              <div className="arrow-icon-container">
+                <ArrowUpRight size={16} strokeWidth={2.5} />
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
         {/* Hamburger — mobile only */}
@@ -156,12 +158,14 @@ function Navbar() {
 
         {/* Register button at bottom */}
         <div className="nav-drawer-register">
-          <div className="register-btn">
-            REGISTER NOW
-            <div className="arrow-icon-container">
-              <ArrowUpRight size={16} strokeWidth={2.5} />
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEHOL10ezcq18ope3fUbBe3tWrWX947nSbOzlA4_pQBHznlw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', width: '100%' }}>
+            <div className="register-btn">
+              REGISTER NOW
+              <div className="arrow-icon-container">
+                <ArrowUpRight size={16} strokeWidth={2.5} />
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </>

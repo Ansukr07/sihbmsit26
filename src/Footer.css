@@ -170,4 +170,8 @@
     flex-direction: column;
     gap: 40px;
   }
+
+  .footer-logo.bmsit-logo {
+    display: none;
+  }
 }
