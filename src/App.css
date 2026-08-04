@@ -13,13 +13,7 @@
   align-items: center;
   padding: 24px 48px;
   width: 100%;
-  background-color: var(--primary-blue); /* Retain the blue background for navbar to keep it exactly as before */
-  color: var(--white);
-  
-  /* Make the navbar sticky so it stays visible during scroll */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background-color: transparent;
 }
 
 .nav-left {
