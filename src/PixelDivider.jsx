@@ -4,7 +4,7 @@ const ROWS = 4; // Reduced to 4 vertical boxes
 const BLOCK_SIZE = 48; // Increased size of each square block in pixels
 
 function PixelDivider({ 
-  topColor = '#f2f0e6', 
+  topColor = '#ffffff', 
   bottomColor = '#094CB8', 
   accentColor = '#5CE1E6' 
 }) {
