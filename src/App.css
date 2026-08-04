@@ -4,7 +4,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 
@@ -74,7 +73,7 @@
 
 .about-title {
   font-family: 'Aux Mono', monospace;
-  font-size: 48px;
+  font-size: 64px;
   font-weight: normal;
   margin-bottom: 40px;
   text-transform: uppercase;

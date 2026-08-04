@@ -6,6 +6,7 @@
   background-color: var(--beige-bg);
   min-height: 100vh;
   padding-top: 100px; /* Space for absolute navbar */
+  overflow-x: hidden;
 }
 
 .timeline-header {

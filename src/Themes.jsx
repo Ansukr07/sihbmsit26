@@ -94,7 +94,11 @@ function Themes() {
   const currentScroll = useRef(0);
   const rafId = useRef(null);
 
+  const [isDesktop, setIsDesktop] = React.useState(window.innerWidth > 900);
+
   useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth > 900);
+    window.addEventListener('resize', handleResize);
     // Reset scroll when entering the page
     window.scrollTo(0, 0);
 
@@ -146,13 +150,14 @@ function Themes() {
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
       if (rafId.current) cancelAnimationFrame(rafId.current);
     };
   }, []);
 
   return (
-    // Increased height to 800vh to significantly slow down the scroll speed
-    <main className="themes-page dark-section" ref={containerRef} style={{ height: '800vh' }}>
+    // Increased height to 800vh to significantly slow down the scroll speed on desktop
+    <main className="themes-page dark-section" ref={containerRef} style={{ height: isDesktop ? '800vh' : 'auto' }}>
       <div className="themes-sticky-wrapper">
         <div className="themes-track" ref={trackRef}>
           {themesList.map((theme, index) => (

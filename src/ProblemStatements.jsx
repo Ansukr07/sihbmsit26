@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Papa from 'papaparse';
 import './ProblemStatements.css';
-import { SlidersHorizontal, Plus, Minus, Search, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { SlidersHorizontal, Plus, Minus, Search, X, ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from 'lucide-react';
 
 const THEMES = [
   "Agriculture, FoodTech & Rural Development",
@@ -43,6 +43,14 @@ function ProblemStatements() {
   const [search, setSearch] = useState('');
   const [expandedId, setExpandedId] = useState(null);
   const [page, setPage] = useState(1);
+  const [showAllThemes, setShowAllThemes] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Load all CSVs
   useEffect(() => {
@@ -176,7 +184,7 @@ function ProblemStatements() {
             </button>
           )}
           <div className="ps-categories">
-            {availableThemes.map(theme => (
+            {(isMobile && !showAllThemes ? availableThemes.slice(0, 5) : availableThemes).map(theme => (
               <label key={theme} className={`ps-checkbox-label ${selectedThemes.includes(theme) ? 'checked' : ''}`}>
                 <input
                   type="checkbox"
@@ -188,6 +196,11 @@ function ProblemStatements() {
                 <span className="ps-checkbox-text">{theme}</span>
               </label>
             ))}
+            {isMobile && availableThemes.length > 5 && (
+              <button className="ps-show-more-btn" onClick={() => setShowAllThemes(prev => !prev)}>
+                {showAllThemes ? <><ChevronUp size={14} /> Show Less</> : <><ChevronDown size={14} /> Show More ({availableThemes.length - 5}))</>}
+              </button>
+            )}
           </div>
         </aside>
 
