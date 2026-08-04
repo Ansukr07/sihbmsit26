@@ -129,10 +129,7 @@ function Navbar() {
       <div className={`nav-drawer ${menuOpen ? 'open' : ''}`}>
         {/* Drawer header */}
         <div className="nav-drawer-header">
-          <div className="nav-drawer-logo">
-            <img src="/bmsit.png" alt="BMSIT Logo" />
-            <img src="/banner.png" alt="Logo" />
-          </div>
+          <div className="nav-drawer-logo" />
           <button
             className="nav-drawer-close"
             onClick={() => setMenuOpen(false)}

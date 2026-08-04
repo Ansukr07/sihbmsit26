@@ -375,14 +375,14 @@
 
 @media (max-width: 480px) {
   .logo-container {
-    gap: 8px;
+    gap: 6px;
   }
   
   .logo-img {
-    height: 24px;
+    height: 28px;
   }
 
   .bmsit-logo {
-    height: 28px;
+    height: 34px;
   }
 }
