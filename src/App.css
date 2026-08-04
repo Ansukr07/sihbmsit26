@@ -149,7 +149,7 @@
   }
 
   .hero-line {
-    font-size: 36px;
+    font-size: 44px;
     gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
@@ -174,8 +174,8 @@
   }
 
   .about-title {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 48px;
+    margin-bottom: 24px;
   }
 
   .about-content p {
@@ -191,7 +191,7 @@
   }
 
   .themes-intro-title {
-    font-size: 40px;
+    font-size: 56px;
     letter-spacing: 1px;
   }
 
@@ -210,11 +210,15 @@
   }
 
   .hero-line {
-    font-size: 26px;
-    gap: 8px;
+    font-size: 40px;
+    gap: 10px;
+  }
+
+  .about-title {
+    font-size: 40px;
   }
 
   .themes-intro-title {
-    font-size: 30px;
+    font-size: 44px;
   }
 }

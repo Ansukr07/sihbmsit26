@@ -224,14 +224,14 @@ function Themes() {
               onClick={() => scrollMobile(-1)}
               disabled={mobileIndex === 0}
             >
-              <ChevronLeft size={20} />
+              <img src={arrowBlue} alt="Left" style={{ width: 24, height: 24, transform: 'rotate(-135deg)' }} />
             </button>
             <button 
               className="themes-mobile-arrow" 
               onClick={() => scrollMobile(1)}
               disabled={mobileIndex >= themesList.length - 1}
             >
-              <ChevronRight size={20} />
+              <img src={arrowBlue} alt="Right" style={{ width: 24, height: 24, transform: 'rotate(45deg)' }} />
             </button>
           </div>
         </div>
