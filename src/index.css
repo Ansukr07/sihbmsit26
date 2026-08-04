@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
+@font-face {
+  font-family: 'Aux Mono';
+  src: url('./fonts/aux-mono/Aux Mono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --primary-blue: #094CB8;
   --dark-blue-bg: rgba(0, 30, 90, 0.4);
   --white: #ffffff;
   --text-blue: #094CB8;
   --text-white: #ffffff;
+  --beige-bg: #f2f0e6;
+  --black-text: #111111;
 }
 
 * {
@@ -16,8 +25,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--primary-blue);
-  color: var(--white);
+  background-color: var(--beige-bg);
+  color: var(--black-text);
   min-height: 100vh;
   overflow-x: hidden;
 }
