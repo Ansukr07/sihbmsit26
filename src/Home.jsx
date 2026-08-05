@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import PixelDivider from './PixelDivider';
 import Themes from './Themes';
 import Timeline from './Timeline';
@@ -19,6 +19,14 @@ function Home() {
           <div className="hero-line offset-3">
             - BMSIT&M <ArrowRight size={72} strokeWidth={3} className="pixel-arrow" />
           </div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEHOL10ezcq18ope3fUbBe3tWrWX947nSbOzlA4_pQBHznlw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="mobile-home-register-wrapper" style={{ textDecoration: 'none' }}>
+            <div className="register-btn">
+              REGISTER NOW
+              <div className="arrow-icon-container">
+                <ArrowUpRight size={16} strokeWidth={2.5} />
+              </div>
+            </div>
+          </a>
         </div>
       </main>
       

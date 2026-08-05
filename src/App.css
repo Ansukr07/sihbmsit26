@@ -56,6 +56,10 @@
   margin-top: -6px;
 }
 
+.mobile-home-register-wrapper {
+  display: none;
+}
+
 /* About SIH Section */
 .about-sih {
   background-color: var(--primary-blue);
@@ -166,6 +170,11 @@
   .pixel-arrow {
     width: 28px !important;
     height: 28px !important;
+  }
+
+  .mobile-home-register-wrapper {
+    display: block;
+    margin-top: 90px;
   }
 
   /* About */
