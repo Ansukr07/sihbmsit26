@@ -62,6 +62,19 @@
   align-self: center;
 }
 
+.hero-register-btn {
+  padding: 12px 12px 12px 32px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.hero-register-btn .arrow-icon-container {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+}
+
 /* About SIH Section */
 .about-sih {
   background-color: var(--primary-blue);
@@ -148,7 +161,7 @@
   }
 
   .hero-text-block {
-    gap: 16px;
+    gap: 24px;
     margin-top: 0;
     width: 100%;
     align-items: center;
@@ -160,6 +173,7 @@
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    line-height: 1.3;
   }
 
   /* Remove staggered offsets on mobile — let them center naturally */

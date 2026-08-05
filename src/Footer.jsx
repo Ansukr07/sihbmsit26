@@ -44,10 +44,7 @@ function Footer() {
                   Yelahanka, Bengaluru, Karnataka 560064
                 </span>
               </li>
-              <li>
-                <Mail size={16} className="pin-icon" />
-                <a href="mailto:ecell@bmsit.in">ecell@bmsit.in</a>
-              </li>
+
               <li className="footer-person">
                 <strong>SIH SPOC:</strong> Prof. S. Mahalakshmi (+91 9060393410)
               </li>
