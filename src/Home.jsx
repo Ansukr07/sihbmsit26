@@ -17,7 +17,7 @@ function Home() {
           <div className="hero-line offset-1">
             SMART INDIA HACKATHON
           </div>
-          <div className="hero-line offset-2">
+          <div className="hero-line offset-2" style={{ flexWrap: 'nowrap' }}>
             <ArrowRight size={72} strokeWidth={3} className="pixel-arrow" style={{ opacity: 0, pointerEvents: 'none' }} />
             (INTERNAL) 
             <ArrowRight size={72} strokeWidth={3} className="pixel-arrow" />

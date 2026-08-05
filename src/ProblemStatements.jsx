@@ -113,6 +113,9 @@ function ProblemStatements() {
         });
       }
 
+      // Sort by ID
+      combined.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true, sensitivity: 'base' }));
+
       setAllProblems(combined);
       setLoading(false);
     });
