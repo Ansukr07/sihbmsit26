@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import PixelDivider from './PixelDivider';
 import Themes from './Themes';
 import Timeline from './Timeline';
@@ -10,15 +10,26 @@ function Home() {
     <>
       <main className="content hero-section">
         <div className="hero-text-block">
+          <div className="hero-subtitle" style={{ fontFamily: 'Aux Mono', fontSize: 'clamp(16px, 3vw, 24px)', color: 'var(--black-text)', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            BMS Institute of Technology and Management presents
+          </div>
           <div className="hero-line offset-1">
             SMART INDIA <ArrowRight size={72} strokeWidth={3} className="pixel-arrow" />
           </div>
           <div className="hero-line offset-2">
-            HACKATHON '26
+            HACKATHON 
           </div>
           <div className="hero-line offset-3">
-            - BMSIT&M <ArrowRight size={72} strokeWidth={3} className="pixel-arrow" />
+            (INTERNAL) <ArrowRight size={72} strokeWidth={3} className="pixel-arrow" />
           </div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEHOL10ezcq18ope3fUbBe3tWrWX947nSbOzlA4_pQBHznlw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="mobile-home-register-wrapper" style={{ textDecoration: 'none' }}>
+            <div className="register-btn">
+              REGISTER NOW
+              <div className="arrow-icon-container">
+                <ArrowUpRight size={16} strokeWidth={2.5} />
+              </div>
+            </div>
+          </a>
         </div>
       </main>
       

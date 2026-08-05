@@ -186,17 +186,22 @@
 
 .themes-mobile-nav {
   display: flex;
-  justify-content: center;
-  gap: 12px;
+  align-items: center;
+  gap: 24px;
+  padding: 0 20px;
+}
+
+.themes-mobile-buttons {
+  display: flex;
+  gap: 8px;
 }
 
 .themes-mobile-arrow {
   width: 48px;
   height: 48px;
-  border-radius: 8px;
-  border: 1.5px solid rgba(40, 112, 232, 0.4);
-  background: rgba(10, 15, 30, 0.9);
-  color: #2870E8;
+  border-radius: 4px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -205,11 +210,38 @@
 }
 
 .themes-mobile-arrow:hover:not(:disabled) {
-  background: rgba(40, 112, 232, 0.15);
-  border-color: #2870E8;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .themes-mobile-arrow:disabled {
   opacity: 0.25;
   cursor: not-allowed;
+}
+
+.themes-mobile-pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: 110px; /* limit width to show about 7 dots at once */
+  scroll-behavior: smooth;
+  white-space: nowrap;
+}
+
+.themes-mobile-pagination::-webkit-scrollbar {
+  display: none;
+}
+
+.theme-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(40, 112, 232, 0.3);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.theme-dot.active {
+  background-color: #2870E8;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Mail } from 'lucide-react';
 import './Footer.css';
+import ecellLogo from './assets/ecell-p.webp';
 
 function Footer() {
   return (
@@ -10,7 +11,11 @@ function Footer() {
         <div className="footer-brand">
           <div className="footer-logos">
             <img src="/bmsit.png" alt="BMSIT Logo" className="footer-logo bmsit-logo" />
-            <img src="/banner.png" alt="SIH Banner" className="footer-logo" />
+            <img src={ecellLogo} alt="E-Cell Logo" className="footer-logo ecell-logo" />
+            <div className="footer-banner-wrapper">
+              <img src="/banner.png" alt="SIH Banner" className="footer-logo banner-original" />
+              <img src="/banner.png" alt="SIH Banner" className="footer-logo banner-tinted" />
+            </div>
             <h2 className="footer-mobile-title">SIH 2026</h2>
           </div>
           <p className="footer-description">

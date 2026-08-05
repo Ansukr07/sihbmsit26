@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight, Menu, X, ChevronRight } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
+import ecellLogo from './assets/ecell-p.webp';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -80,6 +81,7 @@ function Navbar() {
           <div className="logo-container">
             <img src="/bmsit.png" alt="BMSIT Logo" className="logo-img bmsit-logo" />
             <img src="/iic-logo.png" alt="IIC Logo" className="logo-img" />
+            <img src={ecellLogo} alt="E-Cell Logo" className="logo-img ecell-logo" />
             <img src="/banner.png" alt="Logo" className="logo-img" />
           </div>
         </div>

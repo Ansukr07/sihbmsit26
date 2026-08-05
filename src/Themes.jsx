@@ -90,6 +90,7 @@ function Themes() {
   const containerRef = useRef(null);
   const trackRef = useRef(null);
   const mobileTrackRef = useRef(null);
+  const paginationRef = useRef(null);
   
   // Refs for smooth inertia scrolling
   const targetScroll = useRef(0);
@@ -98,6 +99,15 @@ function Themes() {
 
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 900);
   const [mobileIndex, setMobileIndex] = useState(0);
+
+  useEffect(() => {
+    if (paginationRef.current) {
+      const activeDot = paginationRef.current.children[mobileIndex];
+      if (activeDot) {
+        activeDot.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  }, [mobileIndex]);
 
   const getThemeFilterName = (title) => {
     const mapping = {
@@ -227,24 +237,46 @@ function Themes() {
       {/* Mobile: horizontal carousel with arrows */}
       {!isDesktop && (
         <div className="themes-mobile-carousel">
-          <div className="themes-mobile-track" ref={mobileTrackRef}>
+          <div 
+            className="themes-mobile-track" 
+            ref={mobileTrackRef}
+            onScroll={(e) => {
+              const track = e.target;
+              // Assuming each card takes up an equal portion of the scroll width
+              const index = Math.round((track.scrollLeft / track.scrollWidth) * themesList.length);
+              if (index >= 0 && index < themesList.length && index !== mobileIndex) {
+                setMobileIndex(index);
+              }
+            }}
+          >
             {themesList.map((theme, index) => renderCard(theme, index))}
           </div>
           <div className="themes-mobile-nav">
-            <button 
-              className="themes-mobile-arrow" 
-              onClick={() => scrollMobile(-1)}
-              disabled={mobileIndex === 0}
-            >
-              <img src={arrowBlue} alt="Left" style={{ width: 24, height: 24, transform: 'rotate(-135deg)' }} />
-            </button>
-            <button 
-              className="themes-mobile-arrow" 
-              onClick={() => scrollMobile(1)}
-              disabled={mobileIndex >= themesList.length - 1}
-            >
-              <img src={arrowBlue} alt="Right" style={{ width: 24, height: 24, transform: 'rotate(45deg)' }} />
-            </button>
+            <div className="themes-mobile-buttons">
+              <button 
+                className="themes-mobile-arrow" 
+                onClick={() => scrollMobile(-1)}
+                disabled={mobileIndex === 0}
+              >
+                <img src={arrowBlue} alt="Left" style={{ width: 24, height: 24, transform: 'rotate(-135deg)' }} />
+              </button>
+              <button 
+                className="themes-mobile-arrow" 
+                onClick={() => scrollMobile(1)}
+                disabled={mobileIndex >= themesList.length - 1}
+              >
+                <img src={arrowBlue} alt="Right" style={{ width: 24, height: 24, transform: 'rotate(45deg)' }} />
+              </button>
+            </div>
+            
+            <div className="themes-mobile-pagination" ref={paginationRef}>
+              {themesList.map((_, i) => (
+                <div 
+                  key={i} 
+                  className={`theme-dot ${i === mobileIndex ? 'active' : ''}`} 
+                />
+              ))}
+            </div>
           </div>
         </div>
       )}
