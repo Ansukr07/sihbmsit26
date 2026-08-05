@@ -79,6 +79,7 @@ function Navbar() {
         <div className="nav-left">
           <div className="logo-container">
             <img src="/bmsit.png" alt="BMSIT Logo" className="logo-img bmsit-logo" />
+            <img src="/iic-logo.png" alt="IIC Logo" className="logo-img" />
             <img src="/banner.png" alt="Logo" className="logo-img" />
           </div>
         </div>
