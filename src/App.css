@@ -183,6 +183,22 @@
     margin-left: 0;
   }
 
+  .hero-register-btn {
+    padding: 6px 6px 6px 20px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .hero-register-btn .arrow-icon-container {
+    width: 26px;
+    height: 26px;
+  }
+
+  .hero-register-btn .arrow-icon-container svg {
+    width: 16px;
+    height: 16px;
+  }
+
   .pixel-arrow {
     width: 28px !important;
     height: 28px !important;
