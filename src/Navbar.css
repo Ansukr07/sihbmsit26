@@ -119,11 +119,6 @@
 
 .nav-right {
   display: flex;
-  background: rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 4px;
-  border-radius: 6px;
   align-items: center;
   margin-left: auto;
 }

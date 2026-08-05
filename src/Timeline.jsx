@@ -29,15 +29,15 @@ function Timeline() {
     {
       id: 1, row: 1, col: 2, zIndex: 3,
       direction: 'right', type: 'flat-left',
-      title: '5 AUG 2026',
-      desc: 'SIH 2026 Launch',
+      title: '5 - 10 AUG 2026',
+      desc: 'Internal Team Registration',
       color: '#062E6F'
     },
     {
       id: 2, row: 1, col: 3, zIndex: 2,
       direction: 'right', type: 'normal',
-      title: '5 - 10 AUG 2026',
-      desc: 'Internal Team Registration',
+      title: '11 AUG 2026',
+      desc: 'SIH Orientation',
       color: '#094CB8'
     },
     {
@@ -53,7 +53,7 @@ function Timeline() {
       id: 4, row: 2, col: 4, zIndex: 3,
       direction: 'left', type: 'flat-right',
       title: '21 - 22 AUG 2026',
-      desc: 'College Level Selection',
+      desc: 'Internal Hackathon',
       color: '#2870E8'
     },
     {

@@ -82,7 +82,6 @@ function Navbar() {
             <img src="/bmsit.png" alt="BMSIT Logo" className="logo-img bmsit-logo" />
             <img src="/iic-logo.png" alt="IIC Logo" className="logo-img" />
             <img src={ecellLogo} alt="E-Cell Logo" className="logo-img ecell-logo" />
-            <img src="/banner.png" alt="Logo" className="logo-img" />
           </div>
         </div>
 
@@ -100,16 +99,9 @@ function Navbar() {
           ))}
         </div>
 
-        {/* Desktop register button */}
+        {/* Desktop SIH Logo (replaces register button) */}
         <div className="nav-right">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEHOL10ezcq18ope3fUbBe3tWrWX947nSbOzlA4_pQBHznlw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-            <div className="register-btn">
-              REGISTER NOW
-              <div className="arrow-icon-container">
-                <ArrowUpRight size={16} strokeWidth={2.5} />
-              </div>
-            </div>
-          </a>
+          <img src="/banner.png" alt="Logo" className="logo-img sih-logo" style={{ height: '45px', objectFit: 'contain' }} />
         </div>
 
         {/* Hamburger — mobile only */}

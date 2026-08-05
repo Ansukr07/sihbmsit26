@@ -23,14 +23,14 @@
 .hero-text-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 40px;
   margin-top: 7vh;
 }
 
 .hero-line {
   font-family: 'Aux Mono', monospace;
-  font-size: 82px;
+  font-size: 60px;
   font-weight: normal;
   color: var(--black-text);
   display: flex;
@@ -45,19 +45,21 @@
 }
 
 .hero-line.offset-2 {
-  margin-left: 60px;
+  margin-left: 0;
 }
 
 .hero-line.offset-3 {
-  margin-left: 120px;
+  margin-left: 0;
 }
 
 .pixel-arrow {
   margin-top: -6px;
 }
 
-.mobile-home-register-wrapper {
-  display: none;
+.home-register-wrapper {
+  display: flex;
+  margin-top: 24px;
+  align-self: center;
 }
 
 /* About SIH Section */
@@ -153,7 +155,7 @@
   }
 
   .hero-line {
-    font-size: 44px;
+    font-size: 32px;
     gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
@@ -170,11 +172,6 @@
   .pixel-arrow {
     width: 28px !important;
     height: 28px !important;
-  }
-
-  .mobile-home-register-wrapper {
-    display: block;
-    margin-top: 90px;
   }
 
   /* About */
