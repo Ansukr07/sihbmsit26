@@ -7,6 +7,7 @@ import Home from './Home';
 import Themes from './Themes';
 import Timeline from './Timeline';
 import ProblemStatements from './ProblemStatements';
+import Popup from './Popup';
 import './App.css';
 
 function ScrollToTop() {
@@ -23,6 +24,7 @@ function App() {
       <ScrollToTop />
       <div className="app-container">
         <Navbar />
+        <Popup />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/themes" element={<Themes />} />
