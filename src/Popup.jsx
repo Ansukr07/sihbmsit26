@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, FileText, Download } from 'lucide-react';
+import { X, FileText, Download, ExternalLink } from 'lucide-react';
 import './Popup.css';
 
 function Popup() {
@@ -31,6 +31,11 @@ function Popup() {
         <p>Please review the evaluation rubrics and official guidelines for the SIH 2026 Internal Hackathon.</p>
         
         <div className="popup-links">
+          <a href="https://docs.google.com/spreadsheets/d/1GZFq9vYdFa-eMnwW6YxQx72ftymJOGzPOC837j1Jrp8/edit?gid=1007#gid=1007" target="_blank" rel="noopener noreferrer" className="popup-btn" style={{ borderColor: 'var(--primary-blue)', background: '#e6f0ff' }}>
+            <FileText size={18} />
+            <span>Round 2 Schedule</span>
+            <ExternalLink size={16} />
+          </a>
           <a href="/evaluation_rubrics.pdf" target="_blank" rel="noopener noreferrer" className="popup-btn">
             <FileText size={18} />
             <span>Evaluation Rubrics</span>
