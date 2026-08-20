@@ -106,6 +106,16 @@
   background: #094CB8;
 }
 
+.popup-btn.highlight {
+  background: #d32f2f;
+  color: #fff;
+  border-color: #d32f2f;
+}
+
+.popup-btn.highlight:hover {
+  background: #b71c1c;
+}
+
 .popup-btn span {
   flex: 1;
   text-align: left;
