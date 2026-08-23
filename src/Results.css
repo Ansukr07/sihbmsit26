@@ -62,6 +62,11 @@
   letter-spacing: 1px;
 }
 
+.results-header > div {
+  font-size: 24px !important;
+  font-weight: 700;
+}
+
 .results-table-row {
   border-bottom: 1px solid #111;
   background-color: #fff;
@@ -108,9 +113,14 @@
   .results-header {
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr;
-    font-size: 11px;
+    font-size: 13px;
     padding: 12px 16px;
     letter-spacing: 0.5px;
+  }
+
+  .results-header > div {
+    font-size: 13px !important;
+    font-weight: 700;
   }
 
   /* Override ps-title size for Results page on mobile */
