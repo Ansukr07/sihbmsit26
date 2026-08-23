@@ -40,9 +40,9 @@ function Results() {
 
   return (
     <div className="ps-page">
-      <h1 className="ps-title">RESULTS</h1>
+      <h1 className="ps-title" style={{ fontSize: '80px' }}>RESULTS</h1>
 
-      <div className="ps-content" style={{ alignItems: 'flex-start' }}>
+      <div className="ps-content results-content" style={{ alignItems: 'flex-start' }}>
         {/* Sidebar for Search */}
         <aside className="ps-sidebar results-sidebar" style={{ paddingTop: '0px', marginTop: '0px' }}>
           <div className="ps-filter-header" style={{ color: '#000', fontWeight: '700', fontSize: '24px' }}>
