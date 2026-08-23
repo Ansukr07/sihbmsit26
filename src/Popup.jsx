@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, FileText, Download, ExternalLink } from 'lucide-react';
+import { X, FileText, ExternalLink } from 'lucide-react';
 import './Popup.css';
 
 function Popup() {
@@ -27,24 +27,14 @@ function Popup() {
         <button className="popup-close" onClick={handleClose} aria-label="Close">
           <X size={20} />
         </button>
-        <h2>IMPORTANT DOCUMENTS</h2>
-        <p>Please review the evaluation rubrics and official guidelines for the SIH 2026 Internal Hackathon.</p>
+        <h2>🎉 RESULTS ANNOUNCED</h2>
+        <p>The SIH 2026 Internal Hackathon results are now live! Check if your team has made it to the top 100.</p>
         
         <div className="popup-links">
-          <a href="https://docs.google.com/spreadsheets/d/1GZFq9vYdFa-eMnwW6YxQx72ftymJOGzPOC837j1Jrp8/edit?gid=1007#gid=1007" target="_blank" rel="noopener noreferrer" className="popup-btn highlight">
+          <a href="/results" className="popup-btn highlight" onClick={handleClose}>
             <FileText size={18} />
-            <span>Round 2 Schedule</span>
+            <span>View Results</span>
             <ExternalLink size={16} />
-          </a>
-          <a href="/evaluation_rubrics.pdf" target="_blank" rel="noopener noreferrer" className="popup-btn">
-            <FileText size={18} />
-            <span>Evaluation Rubrics</span>
-            <Download size={16} />
-          </a>
-          <a href="/sih_guidelines.pdf" target="_blank" rel="noopener noreferrer" className="popup-btn primary">
-            <FileText size={18} />
-            <span>SIH 2026 Guidelines</span>
-            <Download size={16} />
           </a>
         </div>
       </div>

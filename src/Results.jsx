@@ -60,6 +60,9 @@ function Results() {
         </aside>
 
         <main className="ps-main" style={{ margin: '0', maxWidth: '1100px' }}>
+          <p className="results-note">
+            <strong>Note:</strong> Team order does not indicate ranking or performance. Teams are listed in alphabetical order.
+          </p>
           <div className="results-table-container">
             <div className="ps-table-header results-header">
               <div className="col-team">TEAM NAME</div>
