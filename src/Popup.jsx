@@ -28,7 +28,7 @@ function Popup() {
           <X size={20} />
         </button>
         <h2>🎉 RESULTS ANNOUNCED</h2>
-        <p>The SIH 2026 Internal Hackathon results are now live! Check if your team has made it to the top 100.</p>
+        <p>The SIH 2026 Internal Hackathon results are now live! Check if your team has been selected.</p>
         
         <div className="popup-links">
           <a href="/results" className="popup-btn highlight" onClick={handleClose}>
