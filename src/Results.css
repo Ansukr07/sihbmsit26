@@ -68,8 +68,18 @@
   transition: all 0.2s ease;
 }
 
-.results-table-row:hover {
-  background-color: #f1f1f1;
+.results-table-row:last-child {
+  border-bottom: none;
+}
+
+@media (hover: hover) {
+  .results-table-row:hover {
+    background-color: #f1f1f1;
+  }
+
+  .results-row-main:hover {
+    background: rgba(0,0,0,0.025);
+  }
 }
 
 .results-row-main {
