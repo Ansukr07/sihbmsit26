@@ -112,14 +112,15 @@
   /* Show header on mobile too, but smaller */
   .results-header {
     display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.8fr 1.2fr 1fr;
     font-size: 13px;
-    padding: 12px 16px;
+    padding: 12px 12px;
     letter-spacing: 0.5px;
+    gap: 6px;
   }
 
   .results-header > div {
-    font-size: 13px !important;
+    font-size: 12px !important;
     font-weight: 700;
   }
 
@@ -134,10 +135,10 @@
 
   .results-row-main {
     display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.8fr 1.2fr 1fr;
     align-items: center;
-    padding: 16px;
-    gap: 8px;
+    padding: 14px 12px;
+    gap: 6px;
     /* Remove card styles from ProblemStatements.css */
     border: none !important;
     border-radius: 0 !important;
@@ -148,16 +149,22 @@
   }
 
   .col-team {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .col-psid {
-    font-size: 12px;
+    font-size: 11px;
+    word-break: break-all;
+    overflow-wrap: break-word;
   }
 
   .col-leader {
-    font-size: 13px;
+    font-size: 12px;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .results-sidebar {
