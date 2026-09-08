@@ -7,7 +7,6 @@ import Home from './Home';
 import Themes from './Themes';
 import Timeline from './Timeline';
 import ProblemStatements from './ProblemStatements';
-import Popup from './Popup';
 import Results from './Results';
 import Round3 from './Round3';
 import LoginBicep from './LoginBicep';
@@ -28,7 +27,6 @@ function App() {
       <ScrollToTop />
       <div className="app-container">
         <Navbar />
-        <Popup />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/themes" element={<Themes />} />
