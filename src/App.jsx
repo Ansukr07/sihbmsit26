@@ -9,6 +9,9 @@ import Timeline from './Timeline';
 import ProblemStatements from './ProblemStatements';
 import Popup from './Popup';
 import Results from './Results';
+import Round3 from './Round3';
+import LoginBicep from './LoginBicep';
+import Dashboard from './Dashboard';
 import './App.css';
 
 function ScrollToTop() {
@@ -32,6 +35,9 @@ function App() {
           <Route path="/timeline" element={<Timeline />} />
           <Route path="/problem-statements" element={<ProblemStatements />} />
           <Route path="/results" element={<Results />} />
+          <Route path="/round3" element={<Round3 />} />
+          <Route path="/login-bicep" element={<LoginBicep />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
         <Footer />
       </div>

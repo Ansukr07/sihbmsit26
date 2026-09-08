@@ -7,11 +7,16 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
+    "seed": "node seed.js",
     "preview": "vite preview"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2",
+    "jsonwebtoken": "^9.0.3",
     "lucide-react": "^1.28.0",
+    "mongoose": "^9.9.5",
     "papaparse": "^5.5.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
