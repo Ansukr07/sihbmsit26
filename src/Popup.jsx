@@ -34,9 +34,9 @@ function Popup() {
         <p>The SIH 2026 Internal Hackathon Round 3 schedule is now available. Check your panel and time slot.</p>
         
         <div className="popup-links">
-          <a href="https://docs.google.com/spreadsheets/d/1lyb71mVJRJLZ1gDkzmXoivYntlzBayD4XlrvgJTeD8g/edit?gid=395225848#gid=395225848" target="_blank" rel="noopener noreferrer" className="popup-btn primary" onClick={handleClose}>
+          <a href="https://docs.google.com/spreadsheets/d/1iQBTWr-k-abS8Mn8fATrdQo-6q_CanlarsunFUntYEs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="popup-btn primary" onClick={handleClose}>
             <FileText size={18} />
-            <span>View Schedule</span>
+            <span>Check Full Schedule</span>
             <ExternalLink size={16} />
           </a>
         </div>
