@@ -21,12 +21,17 @@ function ScrollToTop() {
   return null;
 }
 
+function SiteNavbar() {
+  const { pathname } = useLocation();
+  return pathname === '/round3' ? null : <Navbar />;
+}
+
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <div className="app-container">
-        <Navbar />
+        <SiteNavbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/themes" element={<Themes />} />
