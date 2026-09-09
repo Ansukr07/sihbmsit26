@@ -32,6 +32,15 @@ function Home() {
           </a>
         </div>
       </main>
+
+      <section className="schedule-announcement" aria-label="Round 3 schedule announcement">
+        <div>
+          <p className="schedule-kicker">ANNOUNCEMENT · ROUND 3</p>
+          <h2>Internal Hackathon schedule is live.</h2>
+          <p>Check your assigned panel, time slot, and team order in the official Round 3 schedule.</p>
+        </div>
+        <a href="https://docs.google.com/spreadsheets/d/1lyb71mVJRJLZ1gDkzmXoivYntlzBayD4XlrvgJTeD8g/edit?gid=395225848#gid=395225848" target="_blank" rel="noopener noreferrer" className="schedule-announcement-link">VIEW SCHEDULE <ArrowUpRight size={22} strokeWidth={2.5} /></a>
+      </section>
       
       {/* Animated Pixel Art Divider (White to Blue) */}
       <PixelDivider />
