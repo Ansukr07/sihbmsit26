@@ -19,7 +19,7 @@ const Round3 = () => {
   }, []);
 
   return <main className="round3-container">
-    <header className="round3-header"><div><p className="eyebrow">BMSIT&amp;M · INTERNAL HACKATHON</p><h1 className="round3-title">Round 3<br /><span>Team queue</span></h1></div></header>
+    <header className="round3-header"><div><p className="eyebrow">BMSIT&amp;M · INTERNAL HACKATHON</p><h1 className="round3-title">Round 3 <span>Team queue</span></h1></div></header>
     {loading && !panels.length ? <div className="loading-state">Loading team queues...</div> : <div className="panels-grid">
       {panels.slice(0, 5).map((panel) => {
         const teams = panel.teamsList || [];
