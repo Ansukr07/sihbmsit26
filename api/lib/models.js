@@ -17,8 +17,8 @@ const panelSchema = new mongoose.Schema({
     type: [String],
     required: true,
     validate: {
-      validator: (teams) => teams.length === 10,
-      message: 'Each panel must contain exactly 10 teams'
+      validator: (teams) => teams.length >= 3,
+      message: 'Each panel must contain at least 3 teams'
     }
   },
   lastUpdated: { type: Date, default: Date.now }
