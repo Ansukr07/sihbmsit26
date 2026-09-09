@@ -11,6 +11,7 @@ import Results from './Results';
 import Round3 from './Round3';
 import LoginBicep from './LoginBicep';
 import Dashboard from './Dashboard';
+import Popup from './Popup';
 import './App.css';
 
 function ScrollToTop() {
@@ -32,6 +33,7 @@ function App() {
       <ScrollToTop />
       <div className="app-container">
         <SiteNavbar />
+        <Popup />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/themes" element={<Themes />} />

@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { X, FileText, ExternalLink } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 import './Popup.css';
 
 function Popup() {
   const [isOpen, setIsOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
+    if (pathname !== '/') return undefined;
     // Check if the user has already dismissed the popup in this session
     const hasSeenPopup = sessionStorage.getItem('hasSeenSihPopup');
     if (!hasSeenPopup) {
       const timer = setTimeout(() => setIsOpen(true), 1500);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [pathname]);
 
   const handleClose = () => {
     setIsOpen(false);
@@ -27,13 +30,13 @@ function Popup() {
         <button className="popup-close" onClick={handleClose} aria-label="Close">
           <X size={20} />
         </button>
-        <h2>🎉 RESULTS ANNOUNCED</h2>
-        <p>The SIH 2026 Internal Hackathon results are now live! Check if your team has been selected.</p>
+        <h2>ROUND 3 SCHEDULE</h2>
+        <p>The SIH 2026 Internal Hackathon Round 3 schedule is now available. Check your panel and time slot.</p>
         
         <div className="popup-links">
-          <a href="/results" className="popup-btn highlight" onClick={handleClose}>
+          <a href="https://docs.google.com/spreadsheets/d/1lyb71mVJRJLZ1gDkzmXoivYntlzBayD4XlrvgJTeD8g/edit?gid=395225848#gid=395225848" target="_blank" rel="noopener noreferrer" className="popup-btn primary" onClick={handleClose}>
             <FileText size={18} />
-            <span>View Results</span>
+            <span>View Schedule</span>
             <ExternalLink size={16} />
           </a>
         </div>
