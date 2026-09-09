@@ -28,7 +28,6 @@ const Round3 = () => {
         return <section className="panel-card" key={panel._id || panel.panelNumber}>
           <div className="panel-card-head"><span className="panel-kicker">PANEL</span><h2>{String(panel.panelNumber).padStart(2, '0')}</h2><span className="queue-count">3 IN QUEUE</span></div>
           <div className="team-list">{visibleTeams.map(({ team, index, label }) => <div className={`team-row ${label === 'ONGOING' ? 'is-current' : ''}`} key={`${team}-${index}`}><span className="team-number">{String(index + 1).padStart(2, '0')}</span><span className="team-name">{team}</span><span className="presenting-pill">{label}</span></div>)}</div>
-          <p className="last-updated">Updated {new Date(panel.lastUpdated).toLocaleTimeString()}</p>
         </section>;
       })}
     </div>}
