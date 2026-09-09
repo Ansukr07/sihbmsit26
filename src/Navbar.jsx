@@ -63,6 +63,7 @@ function Navbar() {
     { label: 'PROBLEM STATEMENTS', path: '/problem-statements' },
     { label: 'TIMELINE', path: '/timeline' },
     { label: 'RESULTS', path: '/results' },
+    { label: 'ROUND 3 SCHEDULE', path: '/round3' },
     { label: 'PPT FORMAT', isExternal: true, url: 'https://sih.gov.in/letters/2026/SIH2026-IDEA-Presentation-Format.pptx' }
   ];
 

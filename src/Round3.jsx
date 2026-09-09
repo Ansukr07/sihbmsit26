@@ -1,37 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { ExternalLink } from 'lucide-react';
 import './Round3.css';
 
-const Round3 = () => {
-  const [panels, setPanels] = useState([]);
-  const [loading, setLoading] = useState(true);
+const scheduleUrl = 'https://docs.google.com/spreadsheets/d/1lyb71mVJRJLZ1gDkzmXoivYntlzBayD4XlrvgJTeD8g/edit?gid=395225848#gid=395225848';
 
-  useEffect(() => {
-    const fetchPanels = async () => {
-      try {
-        const response = await fetch('/api/panels');
-        if (response.ok) setPanels(await response.json());
-      } catch (error) { console.error('Error fetching panels:', error); }
-      finally { setLoading(false); }
-    };
-    fetchPanels();
-    const interval = setInterval(fetchPanels, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return <main className="round3-container">
-    <header className="round3-header"><div><p className="eyebrow">BMSIT&amp;M · INTERNAL HACKATHON</p><h1 className="round3-title">Round 3 <span>Team queue</span></h1></div></header>
-    {loading && !panels.length ? <div className="loading-state">Loading team queues...</div> : <div className="panels-grid">
-      {panels.slice(0, 5).map((panel) => {
-        const teams = panel.teamsList || [];
-        const current = Math.max(0, Math.min(panel.currentTeamIndex ?? 0, teams.length - 1));
-        const visibleTeams = [0, 1, 2].map((offset) => ({ team: teams[(current + offset) % teams.length], index: (current + offset) % teams.length, label: offset === 0 ? 'ONGOING' : 'NEXT' })).filter((item) => item.team);
-        return <section className="panel-card" key={panel._id || panel.panelNumber}>
-          <div className="panel-card-head"><span className="panel-kicker">PANEL</span><h2>{String(panel.panelNumber).padStart(2, '0')}</h2></div>
-          <div className="team-list">{visibleTeams.map(({ team, index, label }) => <div className={`team-row ${label === 'ONGOING' ? 'is-current' : ''}`} key={`${team}-${index}`}><span className="team-number">{String(index + 1).padStart(2, '0')}</span><span className="team-name">{team}</span><span className="presenting-pill">{label}</span></div>)}</div>
-        </section>;
-      })}
-    </div>}
-  </main>;
-};
+const Round3 = () => <main className="round3-container round3-not-started">
+  <header className="round3-header"><div><p className="eyebrow">BMSIT&amp;M · INTERNAL HACKATHON</p><h1 className="round3-title">Round 3 <span>Team queue</span></h1></div></header>
+  <section className="round3-status-card"><p className="round3-status-kicker">ROUND 3 STATUS</p><h2>Round isn’t started yet</h2><p>The live panel queue will appear here when Round 3 begins.</p><a className="round3-schedule-link" href={scheduleUrl} target="_blank" rel="noopener noreferrer">VIEW ROUND 3 SCHEDULE <ExternalLink size={18} /></a></section>
+</main>;
 
 export default Round3;
