@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  assignedPanel: { type: Number, required: true }
+  assignedPanel: { type: Number, required: true },
+  role: { type: String, enum: ['volunteer', 'admin'], default: 'volunteer' }
 });
 
 const panelSchema = new mongoose.Schema({

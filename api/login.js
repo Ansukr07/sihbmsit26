@@ -31,14 +31,14 @@ export default async function handler(req, res) {
     }
 
     const token = jwt.sign(
-      { userId: user._id, username: user.username, assignedPanel: user.assignedPanel },
+      { userId: user._id, username: user.username, assignedPanel: user.assignedPanel, role: user.role || 'volunteer' },
       process.env.JWT_SECRET,
       { expiresIn: '12h' }
     );
 
     res.status(200).json({ 
       token, 
-      user: { username: user.username, assignedPanel: user.assignedPanel } 
+      user: { username: user.username, assignedPanel: user.assignedPanel, role: user.role || 'volunteer' } 
     });
   } catch (error) {
     console.error(error);

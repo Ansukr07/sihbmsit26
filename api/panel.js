@@ -39,7 +39,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: 'Invalid team index' });
     }
 
-    if (decoded.assignedPanel !== parsedPanelNumber) {
+    if (decoded.role !== 'admin' && decoded.assignedPanel !== parsedPanelNumber) {
       return res.status(403).json({ message: 'Forbidden: You can only update your assigned panel.' });
     }
 
