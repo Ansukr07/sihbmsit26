@@ -35,7 +35,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: 'Invalid panel number' });
     }
 
-    if (!Number.isInteger(parsedTeamIndex) || parsedTeamIndex < 0 || parsedTeamIndex > 9) {
+    if (!Number.isInteger(parsedTeamIndex) || parsedTeamIndex < 0) {
       return res.status(400).json({ message: 'Invalid team index' });
     }
 
@@ -44,9 +44,10 @@ export default async function handler(req, res) {
     }
 
     const existingPanel = await Panel.findOne({ panelNumber: parsedPanelNumber }).select('teamsList');
-    if (!existingPanel || !Array.isArray(existingPanel.teamsList) || existingPanel.teamsList.length !== 10) {
+    if (!existingPanel || !Array.isArray(existingPanel.teamsList) || existingPanel.teamsList.length < 3) {
       return res.status(404).json({ message: 'Panel or team list not found' });
     }
+    if (parsedTeamIndex >= existingPanel.teamsList.length) return res.status(400).json({ message: 'Invalid team index' });
 
     const panel = await Panel.findOneAndUpdate(
       { panelNumber: parsedPanelNumber },

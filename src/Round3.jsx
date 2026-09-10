@@ -1,11 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import './Round3.css';
 
-const Round3 = () => <main className="round3-container round3-not-started">
+const Round3 = () => { const [panels, setPanels] = useState([]); useEffect(() => { const load = async () => { try { const r = await fetch('/api/panels'); if (!r.ok) throw new Error(r.status); setPanels(await r.json()); } catch (e) { console.error('Error fetching panels:', e); } }; load(); const id = setInterval(load, 5000); return () => clearInterval(id); }, []); return <main className="round3-container">
   <header className="round3-header"><div><p className="eyebrow">BMSIT&amp;M · INTERNAL HACKATHON</p><h1 className="round3-title">Round 3 <span>Team queue</span></h1></div></header>
-  <section className="round3-status-card"><p className="round3-status-kicker">ROUND 3 STATUS</p><h2>Round isn’t started yet</h2><p>The live panel queue will appear here when Round 3 begins.</p><div className="round3-status-actions"><Link className="round3-schedule-link" to="/">HOME</Link><a className="round3-schedule-link" href="https://docs.google.com/spreadsheets/d/1iQBTWr-k-abS8Mn8fATrdQo-6q_CanlarsunFUntYEs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">CHECK FULL SCHEDULE <ExternalLink size={18} /></a></div></section>
-</main>;
+  <div className="panels-grid">{panels.slice(0, 5).map(panel => { const teams = panel.teamsList || []; const current = teams.length ? Math.min(Math.max(Number(panel.currentTeamIndex) || 0, 0), teams.length - 1) : 0; const shown = teams.length ? [0,1,2].map(offset => ({team: teams[(current + offset) % teams.length], index: (current + offset) % teams.length, label: offset ? 'NEXT' : 'ONGOING'})) : []; return <section className={`panel-card panel-${panel.panelNumber}`} key={panel.panelNumber}><div className="panel-card-head"><span className="panel-kicker">PANEL</span><h2>{panel.panelNumber}</h2></div><div className="team-list">{shown.map(item => <div className={`team-row ${item.index === current ? 'is-current' : ''}`} key={`${panel.panelNumber}-${item.index}`}><span className="team-number">{item.index + 1}</span><span className="team-name">{item.team}</span><span className="presenting-pill">{item.label}</span></div>)}{!shown.length && <div className="team-row">No teams scheduled</div>}</div></section>; })}</div></main>; };
 
 export default Round3;
