@@ -37,7 +37,7 @@ function Results() {
     r.teamName.toLowerCase().includes(search.toLowerCase()) ||
     r.psId.toLowerCase().includes(search.toLowerCase()) ||
     r.leaderName.toLowerCase().includes(search.toLowerCase())
-  );
+  ).sort((a, b) => a.teamName.localeCompare(b.teamName, undefined, { sensitivity: 'base' }));
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
