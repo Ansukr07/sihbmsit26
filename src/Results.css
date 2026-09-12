@@ -115,9 +115,10 @@
 }
 
 @media (max-width: 768px) {
-  .results-announcement-kicker { margin: -8px 20px 28px; font-size: 15px; }
-  .results-announcement-summary { margin: -18px 20px 28px; font-size: 14px; }
-  .results-view-toggle { flex-direction: column; }
+  .results-announcement-kicker { margin: -8px 20px 12px; font-size: 15px; text-align: center; }
+  .results-announcement-summary { margin: 0 20px 28px; font-size: 14px; text-align: center; }
+  .results-view-toggle { justify-content: center; gap: 6px; }
+  .results-view-toggle button { padding: 9px 11px; font-size: 11px; }
   /* Show header on mobile too, but smaller */
   .results-header {
     display: grid !important;
