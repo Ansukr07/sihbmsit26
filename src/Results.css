@@ -106,6 +106,8 @@
   font-weight: 700;
 }
 
+.results-status-badge { display: inline-block; margin-left: 10px; padding: 4px 8px; border-radius: 999px; background: #ececec; color: #555; font: 700 9px 'Aux Mono', monospace; letter-spacing: .4px; vertical-align: middle; white-space: nowrap; }
+
 .col-leader {
   font-size: 20px;
 }
@@ -164,6 +166,8 @@
     word-break: break-word;
     overflow-wrap: break-word;
   }
+
+  .results-status-badge { display: block; width: fit-content; margin: 4px 0 0; padding: 3px 6px; font-size: 8px; }
 
   .col-psid {
     font-size: 11px;

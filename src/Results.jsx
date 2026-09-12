@@ -33,11 +33,12 @@ function Results() {
       .catch(error => console.error('Error loading results:', error));
   }, []);
 
-  const filtered = teams.filter(r => r.status === view).filter(r =>
-    r.teamName.toLowerCase().includes(search.toLowerCase()) ||
-    r.psId.toLowerCase().includes(search.toLowerCase()) ||
-    r.leaderName.toLowerCase().includes(search.toLowerCase())
-  ).sort((a, b) => a.teamName.localeCompare(b.teamName, undefined, { sensitivity: 'base' }));
+  const filtered = teams.filter(r => {
+    const matchesSearch = r.teamName.toLowerCase().includes(search.toLowerCase()) ||
+      r.psId.toLowerCase().includes(search.toLowerCase()) ||
+      r.leaderName.toLowerCase().includes(search.toLowerCase());
+    return matchesSearch && (search.trim() ? true : r.status === view);
+  }).sort((a, b) => a.teamName.localeCompare(b.teamName, undefined, { sensitivity: 'base' }));
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -89,7 +90,7 @@ function Results() {
               ) : filtered.map((row, i) => (
                 <div key={i} className="ps-table-row results-table-row">
                   <div className="ps-row-main results-row-main">
-                    <div className="col-team ps-title-text">{row.teamName}</div>
+                    <div className="col-team ps-title-text">{row.teamName}{row.status === 'waitlisted' && <span className="results-status-badge">WAITLISTED</span>}</div>
                     <div className="col-psid">{row.psId}</div>
                     <div className="col-leader">{row.leaderName}</div>
                   </div>
