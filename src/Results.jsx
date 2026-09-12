@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Search, X } from 'lucide-react';
 import Papa from 'papaparse';
+import resultsCsv from './excel/SIH FINAL TOP 45+5 - Final List.csv?raw';
 import './ProblemStatements.css';
 import './Results.css';
 
 function Results() {
   const [teams, setTeams] = useState([]);
   const [search, setSearch] = useState('');
+  const [view, setView] = useState('selected');
 
   useEffect(() => {
-    fetch('/results.csv')
-      .then(r => r.text())
+    Promise.resolve(resultsCsv)
       .then(text => {
         const parsed = Papa.parse(text, { header: false, skipEmptyLines: true });
         const rows = parsed.data
@@ -18,16 +19,21 @@ function Results() {
             const slNo = row[0]?.trim();
             return slNo && /^\d+$/.test(slNo); // only numbered rows
           })
-          .map(row => ({
-            teamName: row[1]?.trim() || '',
-            psId: row[2]?.trim() || '',
-            leaderName: row[3]?.trim() || '',
-          }));
+          .map(row => {
+            const slNo = row[0]?.trim();
+            return {
+              teamName: row[1]?.trim() || '',
+              psId: row[2]?.trim() || '',
+              leaderName: row[3]?.trim() || '',
+              status: Number(slNo) <= 45 ? 'selected' : 'waitlisted',
+            };
+          });
         setTeams(rows);
-      });
+      })
+      .catch(error => console.error('Error loading results:', error));
   }, []);
 
-  const filtered = teams.filter(r =>
+  const filtered = teams.filter(r => r.status === view).filter(r =>
     r.teamName.toLowerCase().includes(search.toLowerCase()) ||
     r.psId.toLowerCase().includes(search.toLowerCase()) ||
     r.leaderName.toLowerCase().includes(search.toLowerCase())
@@ -41,6 +47,9 @@ function Results() {
   return (
     <div className="ps-page">
       <h1 className="ps-title" style={{ fontSize: '80px' }}>RESULTS</h1>
+
+      <p className="results-announcement-kicker">ROUND 3 RESULTS</p>
+      <p className="results-announcement-summary">45 teams are selected and 5 teams are waitlisted.</p>
 
       <div className="ps-content results-content" style={{ alignItems: 'flex-start' }}>
         {/* Sidebar for Search */}
@@ -60,8 +69,12 @@ function Results() {
         </aside>
 
         <main className="ps-main" style={{ margin: '0', maxWidth: '1100px' }}>
+          <div className="results-view-toggle" role="tablist" aria-label="Results category">
+            <button className={view === 'selected' ? 'active' : ''} onClick={() => setView('selected')} role="tab" aria-selected={view === 'selected'}>SELECTED TEAMS</button>
+            <button className={view === 'waitlisted' ? 'active' : ''} onClick={() => setView('waitlisted')} role="tab" aria-selected={view === 'waitlisted'}>WAITLISTED TEAMS</button>
+          </div>
           <p className="results-note">
-            <strong>Note:</strong> Team order does not indicate ranking or performance. Teams are listed in alphabetical order.
+            <strong>Note:</strong> Team order does not indicate ranking or performance. Teams are listed according to the final list.
           </p>
           <div className="results-table-container">
             <div className="ps-table-header results-header">

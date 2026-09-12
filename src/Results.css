@@ -10,6 +10,12 @@
   height: fit-content;
 }
 
+.results-announcement-kicker { max-width: 1100px; margin: -20px auto 36px; color: #000; font-family: 'Aux Mono', monospace; font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+.results-announcement-summary { max-width: 1100px; margin: -24px auto 36px; color: #555; font-family: 'Satoshi', sans-serif; font-size: 16px; }
+.results-view-toggle { display: flex; gap: 8px; margin-bottom: 20px; }
+.results-view-toggle button { border: 2px solid #000; background: #fff; color: #000; padding: 13px 18px; font: 700 14px 'Aux Mono', monospace; cursor: pointer; }
+.results-view-toggle button.active { background: #222; color: #fff; }
+
 @media (min-width: 769px) {
   .results-sidebar {
     width: 15%;
@@ -109,6 +115,9 @@
 }
 
 @media (max-width: 768px) {
+  .results-announcement-kicker { margin: -8px 20px 28px; font-size: 15px; }
+  .results-announcement-summary { margin: -18px 20px 28px; font-size: 14px; }
+  .results-view-toggle { flex-direction: column; }
   /* Show header on mobile too, but smaller */
   .results-header {
     display: grid !important;
